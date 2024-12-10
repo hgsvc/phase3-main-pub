@@ -31,8 +31,14 @@ or workflows chaining together otherwise published tools) is listed in the follo
 
 [HGSVC3 software resources (TSV table)](software.tsv)
 
-For all other tools used in the HGSVC phase 3 paper, please refer to the `Code availability` statement
-in the main manuscript and to the respective Methods sections and references therein.
+For all other tools used in the HGSVC phase 3 paper, please refer to the respective
+method publication as referenced in the text.
+
+This repository contains a source copy (tarball) for all of the above software resources
+for the sole purpose of documenting a frozen state. For all inquiries about the respective
+software or feedback such as issue reports, please get in touch with the person listed
+in the software table as contact. Software-specific support requests issued in this
+repository will NOT be answered.
 
 ## Citation sources
 
