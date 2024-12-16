@@ -1,10 +1,10 @@
 category	name	contact	keywords	github	version	release
-scripts	aux-MHC	Alexander Dilthey	MHC	https://github.com/DiltheyLab/MHC-annotation	v0	n/a
-scripts	aux-various	Mark Loftus	MEI, MHC, Iso-Seq, SMN	https://github.com/Markloftus/HGSVC3	v0	n/a
-scripts	kmerdbg	Tobias Rausch	sample selection	https://github.com/tobiasrausch/kmerdbg	v0	n/a
-scripts	PanGenie-hgsvc3	Jana Ebler	PanGenie HGSVC3 experiments	https://github.com/eblerjana/hgsvc3	v0	n/a
-scripts	Sample-selection	Arvis Sulovari	sample selection	https://github.com/asulovar/HGSVC3_sample_selection	v0	n/a
-tool	L1ME-AID	Mark Loftus	MEI	https://github.com/Markloftus/L1ME-AID	v0	n/a
+scripts	aux-MHC	Alexander Dilthey	MHC	https://github.com/DiltheyLab/MHC-annotation	v0	cc0c9b6
+scripts	aux-various	Mark Loftus	MEI, MHC, Iso-Seq, SMN	https://github.com/Markloftus/HGSVC3	v0	9d74a77
+scripts	kmerdbg	Tobias Rausch	sample selection	https://github.com/tobiasrausch/kmerdbg	v0	0688dd9
+scripts	PanGenie-hgsvc3	Jana Ebler	PanGenie HGSVC3 experiments	https://github.com/eblerjana/hgsvc3	v0	9cd4960
+scripts	Sample-selection	Arvis Sulovari	sample selection	https://github.com/asulovar/HGSVC3_sample_selection	v0	4493551
+tool	L1ME-AID	Mark Loftus	MEI	https://github.com/Markloftus/L1ME-AID	v1.0.0-beta	https://github.com/Markloftus/L1ME-AID/blob/main/previousVersions/limeaid.v1.0.0-beta.py
 tool	MELT-LRA	Scott Devine	MEI calling	https://github.com/Scott-Devine/MELT-LRA	v1.4.1	https://github.com/Scott-Devine/MELT-LRA/archive/refs/tags/1.4.1.tar.gz
 tool	PALMER2	Weichen Zhou	MEI calling	https://github.com/WeichenZhou/PALMER	v2.0.1	https://github.com/WeichenZhou/PALMER/archive/refs/tags/V2.0.1.tar.gz
 tool	PAV3	Peter Audano	variant calling	https://github.com/EichlerLab/pav	v0	(manuscript in preparation)
