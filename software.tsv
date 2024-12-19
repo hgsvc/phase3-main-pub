@@ -4,6 +4,7 @@ scripts	aux-various	Mark Loftus	MEI, MHC, Iso-Seq, SMN	https://github.com/Marklo
 scripts	kmerdbg	Tobias Rausch	sample selection	https://github.com/tobiasrausch/kmerdbg	v0	0688dd9
 scripts	PanGenie-hgsvc3	Jana Ebler	PanGenie HGSVC3 experiments	https://github.com/eblerjana/hgsvc3	v0	9cd4960
 scripts	Sample-selection	Arvis Sulovari	sample selection	https://github.com/asulovar/HGSVC3_sample_selection	v0	4493551
+scripts	assembly_eval	Youngjun Kwon	assembly evaluation	https://github.com/EichlerLab/assembly_eval	v0	f50f9dc
 tool	L1ME-AID	Mark Loftus	MEI	https://github.com/Markloftus/L1ME-AID	v1.0.0-beta	https://github.com/Markloftus/L1ME-AID/blob/main/previousVersions/limeaid.v1.0.0-beta.py
 tool	MELT-LRA	Scott Devine	MEI calling	https://github.com/Scott-Devine/MELT-LRA	v1.4.1	https://github.com/Scott-Devine/MELT-LRA/archive/refs/tags/1.4.1.tar.gz
 tool	PALMER2	Weichen Zhou	MEI calling	https://github.com/WeichenZhou/PALMER	v2.0.1	https://github.com/WeichenZhou/PALMER/archive/refs/tags/V2.0.1.tar.gz
