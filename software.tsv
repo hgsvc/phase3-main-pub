@@ -13,3 +13,4 @@ tool	PAV3	Peter Audano	variant calling	https://github.com/EichlerLab/pav	v0	(man
 workflow	Assembly-evaluation	Peter Ebert	assembly evaluation	https://github.com/core-unit-bioinformatics/workflow-smk-assembly-evaluation	v1.1-ptyp	https://github.com/core-unit-bioinformatics/workflow-smk-assembly-evaluation/archive/refs/tags/v1.1-ptyp.tar.gz
 workflow	SDA2	Mark Chaisson	segdups	https://github.com/ChaissonLab/SegDupAnnotation2	v1.3.2	https://github.com/ChaissonLab/SegDupAnnotation2/archive/refs/tags/v1.3.2.tar.gz
 workflow	Verkko-assembly	Peter Ebert	genome assembly	https://github.com/core-unit-bioinformatics/workflow-smk-genome-hybrid-assembly	v1.4.1-ptyp	https://github.com/core-unit-bioinformatics/workflow-smk-genome-hybrid-assembly/archive/refs/tags/v1.4.1-ptyp.tar.gz
+workflow	CDR-Finder	Glennis Logsdon	CDR annotation	https://github.com/EichlerLab/CDR-Finder_smk	v0	529370e
