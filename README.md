@@ -2,6 +2,8 @@
 
 This is the project repository accompanying the phase 3 main ("flagship") publication of the Human Genome Structural Variation Consortium (HGSVC).
 
+[![DOI](https://zenodo.org/badge/895956300.svg)](https://doi.org/10.5281/zenodo.14546728)
+
 ## Resources
 
 ### Data / IGSR FTP
