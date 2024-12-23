@@ -9,7 +9,7 @@ scripts	cubi-custom	Peter Ebert	custom scripts	https://github.com/core-unit-bioi
 tool	L1ME-AID	Mark Loftus	MEI	https://github.com/Markloftus/L1ME-AID	v1.0.0-beta	https://github.com/Markloftus/L1ME-AID/blob/main/previousVersions/limeaid.v1.0.0-beta.py
 tool	MELT-LRA	Scott Devine	MEI calling	https://github.com/Scott-Devine/MELT-LRA	v1.4.1	https://github.com/Scott-Devine/MELT-LRA/archive/refs/tags/1.4.1.tar.gz
 tool	PALMER2	Weichen Zhou	MEI calling	https://github.com/WeichenZhou/PALMER	v2.0.1	https://github.com/WeichenZhou/PALMER/archive/refs/tags/V2.0.1.tar.gz
-tool	PAV3	Peter Audano	variant calling	https://github.com/EichlerLab/pav	v3	(preprint DOI 10.1101/2024.12.19.629504) https://github.com/BeckLaboratory/pav
+tool	PAV3	Peter Audano	variant calling	https://github.com/BeckLaboratory/pav	v3	(preprint DOI 10.1101/2024.12.19.629504) 17a6a5b
 workflow	Assembly-evaluation	Peter Ebert	assembly evaluation	https://github.com/core-unit-bioinformatics/workflow-smk-assembly-evaluation	v1.1-ptyp	https://github.com/core-unit-bioinformatics/workflow-smk-assembly-evaluation/archive/refs/tags/v1.1-ptyp.tar.gz
 workflow	SDA2	Mark Chaisson	segdups	https://github.com/ChaissonLab/SegDupAnnotation2	v1.3.2	https://github.com/ChaissonLab/SegDupAnnotation2/archive/refs/tags/v1.3.2.tar.gz
 workflow	Verkko-assembly	Peter Ebert	genome assembly	https://github.com/core-unit-bioinformatics/workflow-smk-genome-hybrid-assembly	v1.4.1-ptyp	https://github.com/core-unit-bioinformatics/workflow-smk-genome-hybrid-assembly/archive/refs/tags/v1.4.1-ptyp.tar.gz
