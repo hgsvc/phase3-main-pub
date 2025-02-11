@@ -1,0 +1,8 @@
+# DO NOT USE --- 2024-03-07
+# color scheme used in chrY paper, Hallast et al.
+continental_group	color_name	color_hex	rgb_red_rel	rgb_red_abs	rgb_green_rel	rgb_green_abs	rgb_blue_rel	rgb_blue_abs	rgb_rel	rgb_abs	cmyk_cyan	cmyk_magenta	cmyk_yellow	cmyk_black	cmyk
+AFR	goldenrod	D8A105	0.847	216	0.631	161	0.02	5	0.847,0.631,0.02	216,161,5	0	25	98	15	0,25,98,15
+AMR	claret	710027	0.443	113	0.0	0	0.153	39	0.443,0.0,0.153	113,0,39	0	100	65	56	0,100,65,56
+EAS	olive	778500	0.467	119	0.522	133	0.0	0	0.467,0.522,0.0	119,133,0	11	0	100	48	11,0,100,48
+EUR	ming	036C77	0.012	3	0.424	108	0.467	119	0.012,0.424,0.467	3,108,119	97	9	0	53	97,9,0,53
+SAS	phlox	C44CFD	0.769	196	0.298	76	0.992	253	0.769,0.298,0.992	196,76,253	23	70	0	1	23,70,0,1

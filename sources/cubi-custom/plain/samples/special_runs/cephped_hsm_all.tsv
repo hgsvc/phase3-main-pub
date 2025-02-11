@@ -1,0 +1,5 @@
+# 20240502T1417
+sample	asm_hap1	asm_hap2	family	sex
+200101-CEPH	/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/project-centric/ceph_pedigree/2024-01/assemblies/males/200101/hifiasm/0.19.5/200101.hifiasm.dip.hap1.p_ctg.gfa.fasta	/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/project-centric/ceph_pedigree/2024-01/assemblies/males/200101/hifiasm/0.19.5/200101.hifiasm.dip.hap2.p_ctg.gfa.fasta	1463	male
+200102-CEPH	/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/project-centric/ceph_pedigree/2024-01/assemblies/males/200102/hifiasm/0.19.5/200102.hifiasm.dip.hap1.p_ctg.gfa.fasta	/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/project-centric/ceph_pedigree/2024-01/assemblies/males/200102/hifiasm/0.19.5/200102.hifiasm.dip.hap2.p_ctg.gfa.fasta	1463	male
+200105-CEPH	/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/project-centric/ceph_pedigree/2024-01/assemblies/males/200105/hifiasm/0.19.5/200105.hifiasm.dip.hap1.p_ctg.gfa.fasta	/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/project-centric/ceph_pedigree/2024-01/assemblies/males/200105/hifiasm/0.19.5/200105.hifiasm.dip.hap2.p_ctg.gfa.fasta	1463	male

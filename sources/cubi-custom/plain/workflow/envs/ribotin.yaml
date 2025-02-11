@@ -1,0 +1,5 @@
+name: ribotin
+dependencies:
+  - ribotin=1.1
+  - mbg=1.0.15
+  - graphaligner=1.0.17b

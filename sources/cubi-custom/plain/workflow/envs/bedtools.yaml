@@ -1,0 +1,5 @@
+name: bedtools
+dependencies:
+  - bedtools=2.30.*
+  - tabix=1.11
+  - pigz=2.8

@@ -1,0 +1,42 @@
+[cubi.project]
+pid = "https://git.hhu.de/cubi/project-run-hgsvc-hybrid-assemblies"
+type = "run"
+name = "hgsvc-hybrid-assemblies"
+start_date = 2022-07-01
+end_data = 2099-12-31
+version = "2"
+
+[[cubi.project.workflow]]
+pid = "https://github.com/core-unit-bioinformatics/workflow-smk-build-kmer-db"
+name = "build-kmer-db"
+version = "prototype"
+
+[[cubi.project.workflow]]
+pid = "https://github.com/core-unit-bioinformatics/workflow-smk-genome-hybrid-assembly"
+name = "genome-hybrid-assembly"
+version = "v1.4.1-ptyp"
+
+[[cubi.project.workflow]]
+pid = "https://github.com/core-unit-bioinformatics/workflow-smk-assembly-evaluation"
+name = "assembly-evaluation"
+version = "v1.1-ptyp"
+
+[cubi.metadata]
+pid = "undefined"
+version = "1.3.1"
+
+[tool.black]
+line-length = 88
+
+[tool.pylint.format]
+max-line-length = "88"
+
+[tool.pylint.messages_control]
+disable=[
+  "logging-fstring-interpolation",
+  "useless-return",
+  "missing-module-docstring"
+]
+
+[tool.isort]
+profile = "black"

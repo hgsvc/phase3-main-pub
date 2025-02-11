@@ -1,0 +1,11 @@
+name: assessem
+dependencies:
+  - python=3.10.*
+  - pytables
+  - pandas
+  - xopen
+  - numpy
+  - scipy
+  - pyarrow
+  - lz4
+  - pacmap

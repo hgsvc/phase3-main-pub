@@ -1,0 +1,10 @@
+# 20240124T1621
+sample	read_type	processing_batch	file_name	file_path	matched	curated_by	file_group	group_date	cell	alt_id	data_source	file_source	project	file_rel_path	file_date
+GM19320	hifi	-1	n/a		0	metadata	n/a	n/a	m54329U_201019_191314	m54329U_201019_191314	HGSVCuw	20230627_hgsvc_hifi_cell-UW.tsv	HGSVCuw	n/a	n/a
+GM19320	hifi	-1	n/a		0	metadata	n/a	n/a	m54329U_201023_003851	m54329U_201023_003851	HGSVCuw	20230627_hgsvc_hifi_cell-UW.tsv	HGSVCuw	n/a	n/a
+GM19320	hifi	-1	n/a		0	metadata	n/a	n/a	m54329U_201024_070735	m54329U_201024_070735	HGSVCuw	20230627_hgsvc_hifi_cell-UW.tsv	HGSVCuw	n/a	n/a
+GM19320	hifi	-1	n/a		0	metadata	n/a	n/a	m54329U_210225_020106	m54329U_210225_020106	HGSVCuw	20230627_hgsvc_hifi_cell-UW.tsv	HGSVCuw	n/a	n/a
+GM19320	ont	-1	n/a		0	metadata	n/a	n/a	GM19320_20211207_UL_eee-prom1-1A-PAI18617_guppy-5.0.11-sup-prom_fastq_pass	GM19320_20211207_UL_eee-prom1-1A-PAI18617_guppy-5.0.11-sup-prom_fastq_pass	HGSVCuw	20230627_hgsvc_ont_cell-UW.tsv	HGSVCuw	n/a	n/a
+GM19320	ont	-1	n/a		0	metadata	n/a	n/a	GM19320_20211207_UL_eee-prom1-1D-PAI74691_guppy-5.0.11-sup-prom_fastq_pass	GM19320_20211207_UL_eee-prom1-1D-PAI74691_guppy-5.0.11-sup-prom_fastq_pass	HGSVCuw	20230627_hgsvc_ont_cell-UW.tsv	HGSVCuw	n/a	n/a
+GM19320	ont	-1	n/a		0	metadata	n/a	n/a	GM19320_20211215_UL_eee-prom1-1E-PAK54862_guppy-5.0.11-sup-prom_fastq_pass	GM19320_20211215_UL_eee-prom1-1E-PAK54862_guppy-5.0.11-sup-prom_fastq_pass	HGSVCuw	20230627_hgsvc_ont_cell-UW.tsv	HGSVCuw	n/a	n/a
+NA18939	hifi	-1	n/a		0	metadata	n/a	n/a	m54329U_220222_004435	m54329U_220222_004435	HGSVCuw	20230627_hgsvc_hifi_cell-UW.tsv	HGSVCuw	n/a	n/a

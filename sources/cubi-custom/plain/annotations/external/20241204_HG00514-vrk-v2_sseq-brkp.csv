@@ -1,0 +1,45 @@
+# 2024-12-10
+# info by Mir
+# the v1 version of the Strand-seq breaks was automatically filtered
+# to only retain entries of the type "hom_state_switch" (indicating a big break)
+# The below results for HG00514.vrk-ps-sseq (v2) have no such entry
+# and hence no update to the respective input table for the customized
+# "asm label QC" analysis is necessary (see workflow::modules::asm_label_qc::norm_sseq_breakpoints)
+unitig,break_window,window_min,window_max,is_peak_suspicious,is_big_peak,big_state_switch
+utig4-1061,1,370513,379400,TRUE,big_peak,no_hom_state_switch
+utig4-1246,1,42082,42082,TRUE,not_big_peak,no_hom_state_switch
+utig4-1246,3,42717,42799,TRUE,not_big_peak,no_hom_state_switch
+utig4-1246,5,43416,43416,TRUE,not_big_peak,no_hom_state_switch
+utig4-1246,7,265321,272669,TRUE,big_peak,no_hom_state_switch
+utig4-1246,9,274267,274295,TRUE,not_big_peak,no_hom_state_switch
+utig4-1246,11,274303,277667,TRUE,big_peak,no_hom_state_switch
+utig4-142,1,81047,83538,TRUE,not_big_peak,no_hom_state_switch
+utig4-142,3,83552,87189,TRUE,big_peak,no_hom_state_switch
+utig4-142,5,87221,87221,TRUE,not_big_peak,no_hom_state_switch
+utig4-142,7,89175,89196,TRUE,not_big_peak,no_hom_state_switch
+utig4-142,9,89220,97339,TRUE,big_peak,no_hom_state_switch
+utig4-142,11,97521,97521,TRUE,not_big_peak,no_hom_state_switch
+utig4-1481,1,277842,285321,TRUE,not_big_peak,no_hom_state_switch
+utig4-1618,1,632126,632909,TRUE,big_peak,no_hom_state_switch
+utig4-179,1,1586,10563,TRUE,big_peak,no_hom_state_switch
+utig4-179,3,2549490,2557254,TRUE,big_peak,no_hom_state_switch
+utig4-275,1,942541,942640,TRUE,not_big_peak,no_hom_state_switch
+utig4-275,3,946485,953496,TRUE,big_peak,no_hom_state_switch
+utig4-277,1,1407495,1407584,TRUE,not_big_peak,no_hom_state_switch
+utig4-277,3,1409591,1409591,TRUE,not_big_peak,no_hom_state_switch
+utig4-277,5,1411105,1417194,TRUE,big_peak,no_hom_state_switch
+utig4-277,7,1436187,1444074,TRUE,big_peak,no_hom_state_switch
+utig4-34,1,12408,310676,TRUE,big_peak,no_hom_state_switch
+utig4-473,1,15081,15088,TRUE,not_big_peak,no_hom_state_switch
+utig4-473,3,15111,20462,TRUE,big_peak,no_hom_state_switch
+utig4-473,5,294484,296583,TRUE,not_big_peak,no_hom_state_switch
+utig4-665,1,15541,15560,TRUE,not_big_peak,no_hom_state_switch
+utig4-665,3,26697,96296,TRUE,big_peak,no_hom_state_switch
+utig4-773,1,361524,361544,TRUE,not_big_peak,no_hom_state_switch
+utig4-773,3,361727,362706,TRUE,not_big_peak,no_hom_state_switch
+utig4-773,5,362756,363088,TRUE,not_big_peak,no_hom_state_switch
+utig4-773,7,363125,363618,TRUE,not_big_peak,no_hom_state_switch
+utig4-773,9,363678,363752,TRUE,not_big_peak,no_hom_state_switch
+utig4-957,1,416287,421674,TRUE,not_big_peak,no_hom_state_switch
+utig4-999,1,232978,241063,TRUE,big_peak,no_hom_state_switch
+utig4-999,3,243583,249654,TRUE,big_peak,no_hom_state_switch

@@ -1,0 +1,6 @@
+# Relative to data status: 20230831T1042
+# 20231030T1746
+# Samples: 2
+sample	batch	read_type	input
+HG00733	1	hifi	/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/sample-centric/HG00733/HG00733_hifi_fastq.hgsvc-UW-2019.fofn,/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/sample-centric/HG00733/HG00733_hifi_fastq.hgsvc-UW-2023.fofn
+NA24385	2	hifi	/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/sample-centric/NA24385/NA24385_hifi_fastq.HPRCplus-PRJNA731524-2020.fofn,/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/sample-centric/NA24385/NA24385_hifi_fastq.PacBio-PRJNA586863-2019.fofn,/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/sample-centric/NA24385/NA24385_hifi_fastq.T2TY-PRJNA813010-2021.fofn

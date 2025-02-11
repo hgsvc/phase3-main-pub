@@ -1,0 +1,5 @@
+name: seqtools
+dependencies:
+  - seqtk=1.4
+  - blast=2.14.1
+  - pigz=2.6

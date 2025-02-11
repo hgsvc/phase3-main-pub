@@ -1,0 +1,4 @@
+# 20231228T1131
+sample	target	hifi	ont	hic1	hic2
+MTJCCL157	unphased	/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/sample-centric/MTJCCL157/MTJCCL157_hifi_fastq.JAX-2023.fofn	/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/sample-centric/MTJCCL157/MTJCCL157_ont_fastq.JAX-2023.fofn	n/a	n/a
+MTJSMPMIX	hic	/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/sample-centric/MTJCCL157/MTJCCL157_hifi_fastq.JAX-2023.fofn	/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/sample-centric/MTJCCL157/MTJCCL157_ont_fastq.JAX-2023.fofn	/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/sample-centric/MTJSAMN11611925/MTJSAMN11611925_hic_fastq.PRJNA542135-reads1.fofn	/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/sample-centric/MTJSAMN11611925/MTJSAMN11611925_hic_fastq.PRJNA542135-reads2.fofn

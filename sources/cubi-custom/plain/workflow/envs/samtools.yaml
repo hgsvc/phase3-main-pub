@@ -1,0 +1,4 @@
+name: samtools
+dependencies:
+  - samtools=1.16.1
+  - pigz=2.6

@@ -1,0 +1,89 @@
+
+include: "modules/settings/paths.smk"
+include: "modules/settings/sample_table.smk"
+include: "modules/settings/constants.smk"
+
+include: "modules/debug_cov/align_hifi_batches.smk"
+
+include: "modules/asm_compare/pyutils.smk"
+include: "modules/asm_compare/ava_align.smk"
+include: "modules/asm_compare/trio_align.smk"
+
+include: "modules/asm_label_qc/pyutils.smk"
+include: "modules/asm_label_qc/prep_size_file.smk"
+include: "modules/asm_label_qc/norm_flagger.smk"
+include: "modules/asm_label_qc/norm_inspector.smk"
+include: "modules/asm_label_qc/norm_merqury.smk"
+include: "modules/asm_label_qc/norm_read_depth.smk"
+include: "modules/asm_label_qc/norm_segdups.smk"
+include: "modules/asm_label_qc/norm_sseq_breakpoints.smk"
+include: "modules/asm_label_qc/norm_centromere.smk"
+include: "modules/asm_label_qc/norm_nucfreq.smk"
+include: "modules/asm_label_qc/norm_busco.smk"
+include: "modules/asm_label_qc/norm_deepvariant.smk"
+include: "modules/asm_label_qc/assessem.smk"
+include: "modules/asm_label_qc/merging.smk"
+include: "modules/asm_label_qc/merge_stats.smk"
+include: "modules/asm_label_qc/filter.smk"
+
+include: "modules/coverage/contig_cov.smk"
+
+include: "modules/merqury/pyutils.smk"
+include: "modules/merqury/postprocess.smk"
+
+include: "modules/rdna/ribotin.smk"
+
+include: "modules/regions/hla/extract.smk"
+
+include: "modules/regions/gaps/pyutils.smk"
+include: "modules/regions/gaps/eval_hprc.smk"
+include: "modules/regions/gaps/annotate_gaps.smk"
+include: "modules/regions/illcnv/process_cnv.smk"
+
+include: "modules/extract_chrom/pyutils.smk"
+include: "modules/extract_chrom/10_preselect_tigs.smk"
+include: "modules/extract_chrom/20_annotate.smk"
+include: "modules/extract_chrom/30_align.smk"
+include: "modules/extract_chrom/50_rename_tigs.smk"
+
+
+rule run_all:
+    input:
+        everything = [
+            rules.run_all_issue_tracks.input.stats,
+            rules.run_all_extract_hla.input,
+            rules.run_all_ribotin.input.checkfiles,
+            rules.run_all_fetch_chrom_contigs.input,
+            rules.run_all_rename_extracted_chrom.input,
+            rules.run_all_minimap_alignments.input,
+            rules.run_all_debug_cov.input,
+            rules.run_all_asm_ava_align.input,
+            rules.run_normalize_flagger_results.input,
+            rules.run_normalize_inspector_results.input,
+            rules.run_normalize_merqury_results.input,
+        ]
+        #rules.run_all_merqury_postprocess.input
+
+
+TARGET_DIR_SHARE_CHRY=pathlib.Path(
+    "/gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/shares/globus/outgoing/hgsvc/sig_chry"
+)
+rule run_rsync_chry:
+    input:
+        all_fetched = rules.run_all_fetch_chrom_contigs.input,
+        all_renamed = rules.run_all_rename_extracted_chrom.input,
+        all_align = rules.run_all_minimap_alignments.input
+    output:
+        chk = DIR_PROC.joinpath("rsync_chrY_share.ok")
+    params:
+        source=DIR_RES.joinpath("extract_chrom"),
+        target=TARGET_DIR_SHARE_CHRY,
+        ts_file=TARGET_DIR_SHARE_CHRY.joinpath("HGSVC3_SIG-chrY.timestamp")
+    resources:
+        time_hrs=lambda wildcards, attempt: attempt ** 3
+    shell:
+        "rsync --recursive --checksum {params.source}/ {params.target}"
+            " && "
+        "date > {params.ts_file}"
+            " && "
+        "date > {output.chk}"
