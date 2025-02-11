@@ -1,0 +1,38 @@
+INFO - VERSION 1.4.1
+INFO - vcf=../HGSVC-IGS/pav-chr22-only.vcf.gz
+INFO - sample=HG00514
+INFO - fasta_dir=./hg38.analysisSet.chroms
+INFO - alu_water=../HGSVC-IGS/CCS-ALU-water.out.gz
+INFO - alu_water_rev=../HGSVC-IGS/CCS-ALU-water-rev.out.gz
+INFO - sva_water=../HGSVC-IGS/CCS-SVA-water.out.gz
+INFO - sva_water_rev=../HGSVC-IGS/CCS-SVA-water-rev.out.gz
+INFO - line_water=../HGSVC-IGS/CCS-LINE1-water.out.gz
+INFO - line_water_rev=../HGSVC-IGS/CCS-LINE1-water-rev.out.gz
+INFO - min_seqlen=95
+INFO - max_seqlen=50000
+INFO - min_pctid=90
+INFO - min_pctcov=90
+INFO - polyx_window_bp=4
+INFO - polyx_max_mismatch_bp=1
+INFO - seqid=chr22
+INFO - skip_seqids=None
+INFO - csv_output=HG00514-chr22-PAV-MEs-v1.4.1-90-90-95bp.csv
+INFO - alu_fasta=HG00514-chr22-PAV-MEs-ALU-v1.4.1-90-90-95bp.fsa
+INFO - line_fasta=HG00514-chr22-PAV-MEs-LINE-v1.4.1-90-90-95bp.fsa
+INFO - melt_jar=/Users/jcrabtree/HGSVC/MELT/MELT-r38-v4-jc.jar
+INFO - ucsc_rmsk=annotation/rmsk.txt.gz
+INFO - read 5683690 repeat rows from annotation/rmsk.txt.gz
+INFO - read sequence 22 dna:chromosome chromosome:GRCh38:22:1:50818468:1 REF of length 50818468 from ./hg38.analysisSet.chroms/chr22.fa.gz
+INFO - read 194 contig(s) from ../HGSVC-IGS/pav-chr22-only.vcf.gz
+INFO - read 11820 insertions from ../HGSVC-IGS/pav-chr22-only.vcf.gz
+INFO - read 289 insertions with length >= 95 and length <= 50000
+INFO - read 15875 ALU alignment(s) from ../HGSVC-IGS/CCS-ALU-water.out.gz
+INFO - read 15875 reverse strand ALU alignment(s) from ../HGSVC-IGS/CCS-ALU-water-rev.out.gz
+INFO - read 15875 SVA alignment(s) from ../HGSVC-IGS/CCS-SVA-water.out.gz
+INFO - read 15875 reverse strand SVA alignment(s) from ../HGSVC-IGS/CCS-SVA-water-rev.out.gz
+INFO - read 15875 LINE1 alignment(s) from ../HGSVC-IGS/CCS-LINE1-water.out.gz
+INFO - read 15875 reverse strand LINE1 alignment(s) from ../HGSVC-IGS/CCS-LINE1-water-rev.out.gz
+INFO - read 289 insertions from ../HGSVC-IGS/pav-chr22-only.vcf.gz
+INFO - found 1 insertion(s) of length >= 95 with TSDs _before_ the insertion point
+INFO - found 209 insertion(s) of length >= 95 with TSDs _after_ the insertion point
+INFO - found 24 insertion(s) of length >= 95 with ME matches

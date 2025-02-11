@@ -1,0 +1,31 @@
+INFO - VERSION 1.1.0
+INFO - vcf=./pav-chr22-only.vcf.gz
+INFO - fasta_dir=./refs/hg38.analysisSet.chroms
+INFO - alu_water=CCS-ALU-water.out.gz
+INFO - alu_water_rev=CCS-ALU-water-rev.out.gz
+INFO - sva_water=CCS-SVA-water.out.gz
+INFO - sva_water_rev=CCS-SVA-water-rev.out.gz
+INFO - line_water=CCS-LINE1-water.out.gz
+INFO - line_water_rev=CCS-LINE1-water-rev.out.gz
+INFO - min_seqlen=95
+INFO - min_pctid=0
+INFO - min_pctid_nogaps=90
+INFO - min_pctcov=90
+INFO - polyx_window_bp=4
+INFO - polyx_max_mismatch_bp=1
+INFO - seqid=chr22
+INFO - skip_seqids=None
+INFO - read sequence 22 dna:chromosome chromosome:GRCh38:22:1:50818468:1 REF of length 50818468 from ./refs/hg38.analysisSet.chroms/chr22.fa.gz
+INFO - read 194 contig(s) from ./pav-chr22-only.vcf.gz
+INFO - read 11820 insertions from ./pav-chr22-only.vcf.gz
+INFO - read 289 insertions of length >= 95
+INFO - read 15875 ALU alignment(s) from CCS-ALU-water.out.gz
+INFO - read 15875 reverse strand ALU alignment(s) from CCS-ALU-water-rev.out.gz
+INFO - read 15875 SVA alignment(s) from CCS-SVA-water.out.gz
+INFO - read 15875 reverse strand SVA alignment(s) from CCS-SVA-water-rev.out.gz
+INFO - read 15875 LINE1 alignment(s) from CCS-LINE1-water.out.gz
+INFO - read 15875 reverse strand LINE1 alignment(s) from CCS-LINE1-water-rev.out.gz
+INFO - read 289 insertions from ./pav-chr22-only.vcf.gz
+INFO - found 1 insertion(s) of length >= 95 with TSDs _before_ the insertion point
+INFO - found 209 insertion(s) of length >= 95 with TSDs _after_ the insertion point
+INFO - found 29 insertion(s) of length >= 95 with ME matches

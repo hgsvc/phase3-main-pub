@@ -1,0 +1,45 @@
+v1.4.1 (November 2, 2023)
+ -Update MEI viewer to accommodate output from filter_and_count_MEs.py
+ -Add sample/samples column to .csv file format and --sample option to find_MEs.py
+ -Add filter_and_count_MEs.py to filter and merge MEIS and generate summary statistics for a set of samples.
+
+v1.4.0 (October 24, 2023)
+ -Remove --min_pctid_nogaps parameter; no longer needed due to #8.
+ -Compute percent identity using only the portion of the alignment used in the coverage calculation. (#8)
+ -Compute percent coverage based on individual alignment spans instead of min-max coverage range. (#26)
+ -Fix off-by-one error in Smith-Waterman alignment span parsing. (#28)
+ -Add single file build option using vite-plugin-singlefile and gzipped/uuencoded CSV files. (#25)
+
+v1.3.0 (September 8, 2023)
+ -Add genotype and TIG_REGIONs to v1.3.0 CSV and UI. (#21)
+ -Update UI to display and filter on overlapping hg38 repeat annotations. (#4, #16)
+ -Add --ucsc_rmsk option to find_MEs.py (#4, #16)
+ -Add --max_seqlen option to find_MEs.py
+
+v1.2.1 (August 1, 2023)
+ -Add "MEI Summary" tab with list of all CALU/LINEU subs not covered by a pipeline S-W alignment.
+ -Display ORFs for full-length L1s. (#17)
+ -Show CALU/LINEU deletions and substitutions in viewer. (#18)
+
+v1.2.0 (June 2, 2023)
+ -Use MELT CALU and LINEU to classify Alu and LINE elements, respectively. (#2)
+ -Add ungapped percent identity to Vue3 viewer. (#15)
+ -Add percentages to ME type counts in Vue3 viewer.
+ -Add supplemental pagination controls to Vue3 data table. (#13)
+ -Remove spurious polyA features from figures. (#12)
+
+v1.1.1 (May 3, 2023)
+ -Add --csv_output option for CSV formatted output. (#7)
+ -Add Vue3/D3-based MEI visualization/UI. (#7)
+
+v1.1.0 (April 21, 2023)
+ -Report command-line option settings on stderr.
+ -Implement sliding window for polyA/polyT detection, add --polyx_window_bp, --polyx_max_mismatch_bp options. (#1)
+ -Calculate insertion coverage as <ME_alignment_bp_uncovered_by_tsd_polyX> / <insertion_bp_uncovered_by_tsd_polyX> (#9)
+ -Look for TSD both before and after insertion, print warning if longer TSD found before insertion.
+ -Remove restrictions on TSD length.
+ -Add --min_pctid_nogaps option to filter MEIs using percent identity ignoring gaps.
+ -Use alignment score to resolve cases where there are multiple qualifying ME alignments.
+
+v1.0.0 (March 29, 2023)
+ -Initial release of MELT-RISC MEI identification pipeline.

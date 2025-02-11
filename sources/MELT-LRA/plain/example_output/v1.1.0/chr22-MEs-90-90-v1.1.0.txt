@@ -1,0 +1,113 @@
+Location        |ME   |+/-|%ME   |%id   |%id_ng|%cov  | insertion
+chr22:11860400  |ALU  |+  |100.0%| 97.5%| 97.9%|100.0%| ATAGTTCTAC [AAAATGAATGTATACGGCCGGGCGCGGTGGCTCACGCCTGTAATC....+222bp....AGCCTGGGCGACAGAGCGAGACTCCGTCTCAAAAAAAAAAAAAAA] AAAATGAATGTATACATAATCCATGTAAAT
+                                                                    ^^^^^^TSD^^^^^^                                                                          <----polyA---->  ^^^^^^TSD^^^^^^
+                                                                                   [ALU--------------------------              --------------------------ALU>               
+
+chr22:16414896  |LINE1|+  |  3.3%| 34.2%| 90.4%| 97.1%| AACAGCATGC [ATTTAGAGACTTGTCCAAGATGTATATTAGTTCCTTGACTCTCTG....+20bp.....CTGAGCTGTCTGGACATTCTGTAGCATGTTACATTTGTCCATTTT] ATTTACCAGTTAAAATAGACTGGGTAAGAA
+                                                                    ^TSD^                                                                                                     ^TSD^
+                                                                        [LINE1-----------------------------------              ------------------------------------LINE1>   
+
+chr22:16437275  |SVA  |+  | 98.8%| 80.4%| 92.1%| 99.6%| CTAAAAATAC [AAAAATTTGCGAGTGCTCAATGGTGCCCAGGCTGGAGTGCAGTGG...+1270bp....AGAAACACCCAAGAATGATCAATAACAAAAAAAAAAAAAGAAAAA] AAAAATTTGCTGGGCCTGGTGGTGCGCGCC
+                                                                    ^^^TSD^^^^                                                                        <-------polyA-------->  ^^^TSD^^^^
+                                                                                   [SVA--------------------------              -------------------SVA>                      
+
+chr22:16765164  |LINE1|+  |100.0%| 99.6%| 99.7%|100.0%| CAGAATATAT [AAAGAACTCCTGGGGAGGAGCCAAGATGGCCGAATAGGAACAGCT...+5970bp....CTTAGAGTATAATAAAAAAAAAAAAAAAAAAAGAAAAAAAAAAAA] AAAGAACTCCTACAACTCAGCAATAAAGAA
+                                                                    ^^^^TSD^^^^                                                          <--------------polyA-------------->  ^^^^TSD^^^^
+                                                                               [LINE1----------------------------              ----LINE1>                                   
+
+chr22:17224400  |ALU  |-  |100.0%| 94.1%| 96.8%|100.0%| AAGGTACATA [AACAAGTGCTAATAATTTTTTTTTTTTTTTTTTTTTTTTTTTTTG....+243bp....CTCCCAAAGTGCTGGGATTACAGGCGTGAGCCACCGCGCCCGGCC] AACAAGTGCTAATAATTTAGAAGACAAAAA
+                                                                    ^^^^^^^TSD^^^^^^^^<---------polyT---------->                                                              ^^^^^^^TSD^^^^^^^^
+                                                                                                                               -----------------------------------------ALU]
+
+chr22:17567654  |ALU  |-  |100.0%| 94.8%| 97.2%| 99.7%| TTTACCTCTC [TATCCTTGCTTTTATTTATTTATTTATTTATTTATTTATTTTATT....+263bp....TCCCAAAGTGCTGGGATTACAGGCGTGAGCCACCGCGCCCGGCCT] TATCCTTGCTTTTATAATTCCATCAACATC
+                                                                    ^^^^^^TSD^^^^^^<---------------------polyT---                                                             ^^^^^^TSD^^^^^^
+                                                                                                                               ----------------------------------------ALU] 
+
+chr22:17653856  |SVA  |+  | 99.8%| 71.5%| 91.4%| 96.0%| TTCTATTTTT [AAAAATTGTTTATCCCCGCCCGGCCAGCCGCCCCGTCCGGGAGGT...+1623bp....AAACACCCAAGAATTATCAATAAAAAAATAAATTTAAAAAAAAAA] AAAAATTGTTTATCATTCTAGGATATTTAT
+                                                                    ^^^^^TSD^^^^^^                                                                                <-polyA-->  ^^^^^TSD^^^^^^
+                                                                                                                               -----------------SVA>                        
+
+chr22:19373922  |ALU  |-  | 33.8%| 98.9%| 98.9%|100.0%| TTCTGCTCAC [TGCTCTGGCTTTTTTTTTTTTTTTTTTTTTTTGAGACGGAGTCTC....+37bp.....CGGCTCACTGCAAGCTCCGCCTCCCGGGTTCACGCCATTCTCCTG] TGCTCTGGCTTTTTTGTTCACTCTTAGATT
+                                                                    ^^^^^^TSD^^^^^^<-----polyT----->                                                                          ^^^^^^TSD^^^^^^
+                                                                                                    <ALU---------              -----------------------------------------ALU]
+
+chr22:21039497  |ALU  |+  |100.0%| 97.2%| 98.9%|100.0%| AAGAAGACAC [AAAGAAATATAGGCCAGGGCCGGGCGCGGTGGCTCACGCCTGTAA....+230bp....GGCGACAGCGAGACTCCGTCTCAAAAAAAAAAAAAAAAAAAAAAA] AAAGAAATATAGGCCAGGCACGGTGGCTCA
+                                                                    ^^^^^^^TSD^^^^^^^^                                                               <--------polyA-------->  ^^^^^^^TSD^^^^^^^^
+                                                                                     [ALU------------------------              ------------------ALU>                       
+
+chr22:22131975  |LINE1|-  |100.0%| 99.4%| 99.5%| 99.8%| AGCAGGGGTT [GCATATTTCTTTTTTTTTTTTTTTTATTATACTCTAAGTTTTAGG...+5969bp....TTCCTATTCGGCCATCTTGGCTCCTCCTCCCCAACCATCTGAATC] GCATATTTCTTGATGAGCATCCCATGATGC
+                                                                    ^^^^TSD^^^^<-----polyT----->                                                                              ^^^^TSD^^^^
+                                                                                                <LINE1-----------              ------------------------LINE1]               
+
+chr22:22179735  |ALU  |+  |100.0%| 97.2%| 97.2%|100.0%| CACATGTAAT [AAAACCAGAGGGGCCGGGCGCGGTGGCTCACGCCTGTAATCCCAG....+227bp....ACAGGGCGAGACTCCGTCTCAAAAGAAAAAAAAAAAAAAAAAAAA] AAAACCAGAGGAGCTGGTTTAATAAAACCT
+                                                                    ^^^^TSD^^^^                                                                    <---------polyA--------->  ^^^^TSD^^^^
+                                                                               [ALU------------------------------              ----------------ALU>                         
+
+chr22:25792353  |ALU  |+  |100.0%| 95.1%| 97.5%|100.0%| ATGCTGAGAT [AAGAAGTGGATTGGCCGGGCGCGGTGGCTCACGCCTGTAATCCCA....+224bp....CGACCTGGGCGACAGAGCGAGACTCCGTCTCAAAAAAAAAAAAAA] AAGAAGTGGATTGGTGAGATGCTGAGCGAC
+                                                                    ^^^^^TSD^^^^^^                                                                            <---polyA---->  ^^^^^TSD^^^^^^
+                                                                                [ALU-----------------------------              ---------------------------ALU>              
+
+chr22:26601643  |ALU  |-  |100.0%| 98.2%| 98.2%| 99.6%| TTTTCTCCAT [CTAACAGCTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTGAGACG....+231bp....TCCCAAAGTGCTGGGATTACAGGCGTGAGCCACCGCGCCCGGCCC] CTAACAGCTTTTTAGAGCTGATTTGTTTAC
+                                                                    ^^^^^TSD^^^^^<---------polyT---------->                                                                   ^^^^^TSD^^^^^
+                                                                                                           <ALU--              ----------------------------------------ALU] 
+
+chr22:27859944  |ALU  |+  |100.0%| 99.3%| 99.3%|100.0%| AAAGTCCCTT [AAAACCTGGCCGGGCGCGGTGGCTCACGCCTGTAATCCCAGCACT....+226bp....GAGCGAGACTCCGTCTCAAAAAAAAAAAAAAAAAAAAAAAAAAAA] AAAACCTCTGCTGCCATCTGTCTTTGCTGC
+                                                                    ^^TSD^^                                                                     <----------polyA----------->  ^^TSD^^
+                                                                           [ALU----------------------------------              -------------ALU>                            
+
+chr22:33132512  |ALU  |+  |100.0%| 97.2%| 97.5%| 95.2%| ATGTTGAATT [AGAAGTCATTATTAGGGCCGGGCGCGGTGGCTCACGCCTGTAATC....+230bp....ACAGAGCGAAACTCCGTCTCAAAAAAAAAAAAAAAAAAAAAAAAA] AAAAGTCATTATTAGTATTTTTGTACTTAA
+                                                                    ^                                                                              <---------polyA--------->  ^
+                                                                                   [ALU--------------------------              ----------------ALU>                         
+
+chr22:34034609  |ALU  |-  | 99.6%| 92.5%| 96.4%|100.0%| GGTCTCAGTT [CAAATGGAACTTTTTTTTTTTTTTTTTTTTTTTTTGAGACGGAGT....+237bp....CCTCCCAAAGTGCTGGGATTACAGGCGTGAGCCACCGCGCCCGGC] CAAATGGAACTTTTACACAGAAGCCTTCCT
+                                                                    ^^^^^TSD^^^^^^<-------polyT------->                                                                       ^^^^^TSD^^^^^^
+                                                                                                       <ALU------              -----------------------------------------ALU]
+
+chr22:34784744  |ALU  |+  |100.0%| 97.9%| 97.9%|100.0%| GATTGAAGTT [AAAAATAAGATTCTTGGCCGGGCGCGGTGGCTCACGCCTGTAATC....+232bp....CAGAGCGAGACTCCGTCTCAAAAAAAAAAATAAAATAAAAAATAA] AAAAATAAGATTCTTTATTGCACAGAATCA
+                                                                    ^^^^^^TSD^^^^^^                                                               <---------polyA---------->  ^^^^^^TSD^^^^^^
+                                                                                   [ALU--------------------------              ---------------ALU>                          
+
+chr22:35397411  |ALU  |-  |100.0%| 93.4%| 95.7%|100.0%| TTAATTTGTA [TAGAGGTATTTTATTTTATTTTATTTTATTTTTTTTTTATTTTAT....+256bp....CTCCCAAAGTGCTGGGATTACAGGCGTGAGCCACCGCGCCCGGCC] TAGAGGTATTTTAAAGGGAGGTTGACCAGC
+                                                                    ^^^^^TSD^^^^^<-------------------polyT-------                                                             ^^^^^TSD^^^^^
+                                                                                                                               -----------------------------------------ALU]
+
+chr22:36315826  |ALU  |+  |100.0%| 92.5%| 97.2%|100.0%| TGTTTAGCTT [AAAACACATCTAGGCCGGGCGCGGTGGCTCACGCCTGTAATCCCA....+231bp....CGGCCTGGGCGACAGAGCGAGACTCCGTCTCAAAAAAAAAAAAAA] AAAACACATCTAACTGAGCCTGGGCCACAC
+                                                                    ^^^^TSD^^^^^                                                                              <---polyA---->  ^^^^TSD^^^^^
+                                                                                [ALU-----------------------------              ---------------------------ALU>              
+
+chr22:40501469  |SVA  |-  | 11.2%| 92.8%| 95.9%|100.0%| GCGCCCCTCA [CCTCCCGGACGGGGCGGCTGGCCGGGCAGGGGGGCCGACCCCCCC....+62bp.....CCGGACGGGGCGGCTGGCCGGGCGGGGGGCCGACCCCCCCACCTC] CCTCCCAGACGGGGCGGCTGGCCCGGCGGA
+                                                                    ^TSD^^                                                                                                    ^TSD^^
+                                                                    <SVA-----------------------------------------              -----------------------------------------SVA]
+
+chr22:40537628  |SVA  |+  | 42.2%| 79.7%| 90.8%|100.2%| CGCCCCGTCT [GGGAGGTGAGGGGCGCCTCTGCCCGGCCGCCCCTACTGGGAAGTG....+467bp....GGGAGGTGGGGGGGTCAGCCCCCCGCCCGGCCAGCCGCCACGTCC] GGGAGGTGAGGGGCGCCTCTGCCCGGCCGC
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^TSD^^^^^^^^^^^^^^^^^                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^TSD^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                    [SVA-----------------------------------------              ----------------------------------------SVA> 
+
+chr22:40745440  |SVA  |-  | 13.3%| 66.9%| 93.6%|100.0%| GACGGGGCGA [CTGGCCGGGCAGAGGGGCTCCTCACTTCCCAGTAGGGGCGGCCGG....+36bp.....GCCGACCCCCCCCCCCCCCCCCCGCCTCCCTCCCGGACGGGGCGG] CTGGCCGGGCAGAGGGGCTCCTCACTTCCC
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^TSD^^^^^^^^^                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^TSD^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                                                     <SVA----------------------------------------              -----------------------------------------SVA]
+
+chr22:41294866  |SVA  |+  | 38.4%| 67.8%| 92.3%| 99.7%| AGCCACCTCG [TCCGGGAGGGAGGTCGGGGGGTCAGCCCCCCGCCCGGCCAGCCGC....+295bp....GGAGGGAGGTGGGGGGGTCAGTCCCCTGCCCGGCCAGCCGCCCTA] TCCGGGAGGGAGGTGGGGGGGTGAGCCCCC
+                                                                    ^^^^^TSD^^^^^^                                                                                            ^^^^^TSD^^^^^^
+                                                                    [SVA-----------------------------------------              ---------------------------------------SVA>  
+
+chr22:41314924  |ALU  |+  |100.0%| 97.2%| 98.2%|100.0%| ATTATTACTT [AAAAATACAGGCAGGCCGGGCGCGGTGGCTCACGCCTGTAATCCC....+239bp....GAGACTCCATCTCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA] AAAAATACAGGCAAGACCCTGTCTCCAAAA
+                                                                    ^^^^^TSD^^^^^                                                           <------------polyA------------->  ^^^^^TSD^^^^^
+                                                                                 [ALU----------------------------              ---------ALU>                                
+
+chr22:43928709  |LINE1|-  | 17.5%| 99.7%| 99.7%| 94.8%| ACCTACTCTG [TGCAAAGGGCATTTTCTTTTTTTTTTTTTTTTTTTTTTTTTTTTT...+1070bp....TGTCTTTTGTTGCCATTGCTTTTGGTGTTTTGGACATGAAGTCCT] TGCAAAGGGCATTTTCAAGTTTGTTGCCCT
+                                                                    ^^^^^^TSD^^^^^^^<-----------polyT------------                                                             ^^^^^^TSD^^^^^^^
+                                                                                                                               ---------------------------------------LINE1]
+
+chr22:45166718  |ALU  |+  | 32.4%| 84.5%| 95.6%|100.0%| TCTGCACAGT [AAAGAATTATGTCGCGTGAACCCGGGAAGCGGAGCTTGCAGTGAG....+35bp.....GGGCGACAGAGCGAGACTCCGTCTCAAAAAAAAAAAAAAAAAAAA] AAAGAATTATGTCTATTCCTGTATTTGTTT
+                                                                    ^^^^^TSD^^^^^                                                                       <------polyA------->  ^^^^^TSD^^^^^
+                                                                      [ALU---------------------------------------              ---------------------ALU>                    
+
+chr22:49029644  |SVA  |+  |100.0%| 71.5%| 94.9%| 97.5%| TTTCTGTTAT [AAGAAAACTCCTGCTCTCCCTCCTCTCCCTCTCCCTCCTCTCCCT...+1712bp....CCTCTGCGAGAAACACCCAAGAATGATCAATAAAAAAAAAAAAAA] AAGAAAACTCCTTGCTCAAAAGCTAGACAA
+                                                                    ^^^^TSD^^^^^                                                                           <-----polyA----->  ^^^^TSD^^^^^
+                                                                                                                               ---------------------------SVA>              
+
+chr22:49879746  |ALU  |-  | 76.2%| 93.2%| 96.3%|100.0%| GTTGGTTTTT [TTTTTTTTTTTTTGAGACGGAGTCTCGCTCTGTTGCCCAGGCCGG....+144bp....GACGGGGTTTCACCTTGTTAGCCAGGATGGTCTCGATCTCCTGAC] CTCCTGGTCAGTGTCTGGGCGTGTTTCTAT
+                                                                    <---polyT--->                                                                                             
+                                                                                 <ALU----------------------------              -----------------------------------------ALU]
+

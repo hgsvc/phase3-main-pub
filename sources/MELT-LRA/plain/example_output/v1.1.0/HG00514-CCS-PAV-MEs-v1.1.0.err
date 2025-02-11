@@ -1,0 +1,237 @@
+INFO - skipping insertions on sequence chrY
+INFO - VERSION 1.1.0
+INFO - vcf=./HGSVC3/pav_HG00514_CCS_SS_PG_PRR.vcf.gz
+INFO - fasta_dir=./refs/hg38.analysisSet.chroms
+INFO - alu_water=CCS-ALU-water.out.gz
+INFO - alu_water_rev=CCS-ALU-water-rev.out.gz
+INFO - sva_water=CCS-SVA-water.out.gz
+INFO - sva_water_rev=CCS-SVA-water-rev.out.gz
+INFO - line_water=CCS-LINE1-water.out.gz
+INFO - line_water_rev=CCS-LINE1-water-rev.out.gz
+INFO - min_seqlen=100
+INFO - min_pctid=0
+INFO - min_pctid_nogaps=90
+INFO - min_pctcov=90
+INFO - polyx_window_bp=4
+INFO - polyx_max_mismatch_bp=1
+INFO - seqid=None
+INFO - skip_seqids=chrY
+INFO - read sequence chrUn_KI270752v1 of length 27745 from ./refs/hg38.analysisSet.chroms/chrUn_KI270752v1.fa.gz
+INFO - read sequence chrUn_KI270742v1 of length 186739 from ./refs/hg38.analysisSet.chroms/chrUn_KI270742v1.fa.gz
+INFO - read sequence chrUn_KI270424v1 of length 2140 from ./refs/hg38.analysisSet.chroms/chrUn_KI270424v1.fa.gz
+INFO - read sequence chrUn_KI270587v1 of length 2969 from ./refs/hg38.analysisSet.chroms/chrUn_KI270587v1.fa.gz
+INFO - read sequence chrUn_KI270336v1 of length 1026 from ./refs/hg38.analysisSet.chroms/chrUn_KI270336v1.fa.gz
+INFO - read sequence ENA|CM000676|CM000676.2 Homo sapiens chromosome 14, GRCh38 reference primary assembly. of length 107043718 from ./refs/hg38.analysisSet.chroms/CM000676.2.fasta.gz
+INFO - read sequence 22 dna:chromosome chromosome:GRCh38:22:1:50818468:1 REF of length 50818468 from ./refs/hg38.analysisSet.chroms/chr22.fa.gz
+INFO - read sequence chrUn_KI270511v1 of length 8127 from ./refs/hg38.analysisSet.chroms/chrUn_KI270511v1.fa.gz
+INFO - read sequence chrUn_KI270362v1 of length 3530 from ./refs/hg38.analysisSet.chroms/chrUn_KI270362v1.fa.gz
+INFO - read sequence chrUn_KI270372v1 of length 1650 from ./refs/hg38.analysisSet.chroms/chrUn_KI270372v1.fa.gz
+INFO - read sequence chr20 of length 64444167 from ./refs/hg38.analysisSet.chroms/chr20.fa.gz
+INFO - read sequence chr9 of length 138394717 from ./refs/hg38.analysisSet.chroms/chr9.fa.gz
+INFO - read sequence chrUn_GL000216v2 of length 176608 from ./refs/hg38.analysisSet.chroms/chrUn_GL000216v2.fa.gz
+INFO - read sequence chrUn_KI270310v1 of length 1201 from ./refs/hg38.analysisSet.chroms/chrUn_KI270310v1.fa.gz
+INFO - read sequence chrUn_KI270508v1 of length 1951 from ./refs/hg38.analysisSet.chroms/chrUn_KI270508v1.fa.gz
+INFO - read sequence chrUn_KI270518v1 of length 2186 from ./refs/hg38.analysisSet.chroms/chrUn_KI270518v1.fa.gz
+INFO - read sequence chrUn_KI270412v1 of length 1179 from ./refs/hg38.analysisSet.chroms/chrUn_KI270412v1.fa.gz
+INFO - read sequence chrUn_KI270386v1 of length 1788 from ./refs/hg38.analysisSet.chroms/chrUn_KI270386v1.fa.gz
+INFO - read sequence chrUn_KI270396v1 of length 1880 from ./refs/hg38.analysisSet.chroms/chrUn_KI270396v1.fa.gz
+INFO - read sequence chrUn_KI270373v1 of length 1451 from ./refs/hg38.analysisSet.chroms/chrUn_KI270373v1.fa.gz
+INFO - read sequence chrUn_KI270363v1 of length 1803 from ./refs/hg38.analysisSet.chroms/chrUn_KI270363v1.fa.gz
+INFO - read sequence chrUn_KI270544v1 of length 1202 from ./refs/hg38.analysisSet.chroms/chrUn_KI270544v1.fa.gz
+INFO - read sequence chrUn_KI270311v1 of length 12399 from ./refs/hg38.analysisSet.chroms/chrUn_KI270311v1.fa.gz
+INFO - read sequence chrUn_KI270519v1 of length 138126 from ./refs/hg38.analysisSet.chroms/chrUn_KI270519v1.fa.gz
+INFO - read sequence chrUn_KI270509v1 of length 2318 from ./refs/hg38.analysisSet.chroms/chrUn_KI270509v1.fa.gz
+INFO - read sequence ENA|CM000681|CM000681.2 Homo sapiens chromosome 19, GRCh38 reference primary assembly. of length 58617616 from ./refs/hg38.analysisSet.chroms/chr19.fa.gz
+INFO - read sequence chr14_GL000194v1_random of length 191469 from ./refs/hg38.analysisSet.chroms/chr14_GL000194v1_random.fa.gz
+INFO - read sequence chrUn_KI270387v1 of length 1537 from ./refs/hg38.analysisSet.chroms/chrUn_KI270387v1.fa.gz
+INFO - read sequence ENA|CM000686|CM000686.2 Homo sapiens chromosome Y, GRCh38 reference primary assembly. of length 57227415 from ./refs/hg38.analysisSet.chroms/CM000686.2.fa.gz
+INFO - read sequence ENA|CM000681|CM000681.2 Homo sapiens chromosome 19, GRCh38 reference primary assembly. of length 58617616 from ./refs/hg38.analysisSet.chroms/CM000681.2.fasta.gz
+INFO - read sequence chrUn_KI270743v1 of length 210658 from ./refs/hg38.analysisSet.chroms/chrUn_KI270743v1.fa.gz
+INFO - read sequence chrUn_KI270753v1 of length 62944 from ./refs/hg38.analysisSet.chroms/chrUn_KI270753v1.fa.gz
+INFO - read sequence chrUn_KI270425v1 of length 1884 from ./refs/hg38.analysisSet.chroms/chrUn_KI270425v1.fa.gz
+INFO - read sequence chrUn_KI270435v1 of length 92983 from ./refs/hg38.analysisSet.chroms/chrUn_KI270435v1.fa.gz
+INFO - read sequence chr15_KI270727v1_random of length 448248 from ./refs/hg38.analysisSet.chroms/chr15_KI270727v1_random.fa.gz
+INFO - read sequence chr11_KI270721v1_random of length 100316 from ./refs/hg38.analysisSet.chroms/chr11_KI270721v1_random.fa.gz
+INFO - read sequence chr17_GL000205v2_random of length 185591 from ./refs/hg38.analysisSet.chroms/chr17_GL000205v2_random.fa.gz
+INFO - read sequence chrUn_KI270337v1 of length 1121 from ./refs/hg38.analysisSet.chroms/chrUn_KI270337v1.fa.gz
+INFO - read sequence chrUn_GL000214v1 of length 137718 from ./refs/hg38.analysisSet.chroms/chrUn_GL000214v1.fa.gz
+INFO - read sequence chrUn_KI270468v1 of length 4055 from ./refs/hg38.analysisSet.chroms/chrUn_KI270468v1.fa.gz
+INFO - read sequence chrUn_KI270510v1 of length 2415 from ./refs/hg38.analysisSet.chroms/chrUn_KI270510v1.fa.gz
+INFO - read sequence chrUn_KI270303v1 of length 1942 from ./refs/hg38.analysisSet.chroms/chrUn_KI270303v1.fa.gz
+INFO - read sequence chrUn_KI270748v1 of length 93321 from ./refs/hg38.analysisSet.chroms/chrUn_KI270748v1.fa.gz
+INFO - read sequence chrUn_GL000220v1 of length 161802 from ./refs/hg38.analysisSet.chroms/chrUn_GL000220v1.fa.gz
+INFO - read sequence chr5_GL000208v1_random of length 92689 from ./refs/hg38.analysisSet.chroms/chr5_GL000208v1_random.fa.gz
+INFO - read sequence 21 dna:chromosome chromosome:GRCh38:21:1:46709983:1 REF of length 46709983 from ./refs/hg38.analysisSet.chroms/chr21.fa.gz
+INFO - read sequence chr8 of length 145138636 from ./refs/hg38.analysisSet.chroms/chr8.fa.gz
+INFO - read sequence chrUn_KI270371v1 of length 2805 from ./refs/hg38.analysisSet.chroms/chrUn_KI270371v1.fa.gz
+INFO - read sequence chrUn_KI270385v1 of length 990 from ./refs/hg38.analysisSet.chroms/chrUn_KI270385v1.fa.gz
+INFO - read sequence chrUn_KI270395v1 of length 1143 from ./refs/hg38.analysisSet.chroms/chrUn_KI270395v1.fa.gz
+INFO - read sequence ENA|CM000684|CM000684.2 Homo sapiens chromosome 22, GRCh38 reference primary assembly. of length 50818468 from ./refs/hg38.analysisSet.chroms/CM000684.2.fa.gz
+INFO - read sequence chrUn_KI270411v1 of length 2646 from ./refs/hg38.analysisSet.chroms/chrUn_KI270411v1.fa.gz
+INFO - read sequence chrUn_KI270579v1 of length 31033 from ./refs/hg38.analysisSet.chroms/chrUn_KI270579v1.fa.gz
+INFO - read sequence chr9_KI270720v1_random of length 39050 from ./refs/hg38.analysisSet.chroms/chr9_KI270720v1_random.fa.gz
+INFO - read sequence chr14_GL000225v1_random of length 211173 from ./refs/hg38.analysisSet.chroms/chr14_GL000225v1_random.fa.gz
+INFO - read sequence chrUn_KI270584v1 of length 4513 from ./refs/hg38.analysisSet.chroms/chrUn_KI270584v1.fa.gz
+INFO - read sequence chrUn_KI270378v1 of length 1048 from ./refs/hg38.analysisSet.chroms/chrUn_KI270378v1.fa.gz
+INFO - read sequence chrUn_KI270751v1 of length 150742 from ./refs/hg38.analysisSet.chroms/chrUn_KI270751v1.fa.gz
+INFO - read sequence chrUn_KI270741v1 of length 157432 from ./refs/hg38.analysisSet.chroms/chrUn_KI270741v1.fa.gz
+INFO - read sequence chrUn_KI270512v1 of length 22689 from ./refs/hg38.analysisSet.chroms/chrUn_KI270512v1.fa.gz
+INFO - read sequence chr16_KI270728v1_random of length 1872759 from ./refs/hg38.analysisSet.chroms/chr16_KI270728v1_random.fa.gz
+INFO - read sequence chr3_GL000221v1_random of length 155397 from ./refs/hg38.analysisSet.chroms/chr3_GL000221v1_random.fa.gz
+INFO - read sequence chrUn_KI270335v1 of length 1048 from ./refs/hg38.analysisSet.chroms/chrUn_KI270335v1.fa.gz
+INFO - read sequence chrUn_KI270418v1 of length 2145 from ./refs/hg38.analysisSet.chroms/chrUn_KI270418v1.fa.gz
+INFO - read sequence chrUn_KI270379v1 of length 1045 from ./refs/hg38.analysisSet.chroms/chrUn_KI270379v1.fa.gz
+INFO - read sequence chrUn_GL000195v1 of length 182896 from ./refs/hg38.analysisSet.chroms/chrUn_GL000195v1.fa.gz
+INFO - read sequence chrUn_KI270750v1 of length 148850 from ./refs/hg38.analysisSet.chroms/chrUn_KI270750v1.fa.gz
+INFO - read sequence chrUn_KI270419v1 of length 1029 from ./refs/hg38.analysisSet.chroms/chrUn_KI270419v1.fa.gz
+INFO - read sequence chrUn_KI270334v1 of length 1368 from ./refs/hg38.analysisSet.chroms/chrUn_KI270334v1.fa.gz
+INFO - read sequence chrUn_KI270312v1 of length 998 from ./refs/hg38.analysisSet.chroms/chrUn_KI270312v1.fa.gz
+INFO - read sequence chrUn_KI270302v1 of length 2274 from ./refs/hg38.analysisSet.chroms/chrUn_KI270302v1.fa.gz
+INFO - read sequence chrUn_KI270749v1 of length 158759 from ./refs/hg38.analysisSet.chroms/chrUn_KI270749v1.fa.gz
+INFO - read sequence chrX of length 156040895 from ./refs/hg38.analysisSet.chroms/chrX.fa.gz
+INFO - read sequence chrUn_KI270394v1 of length 970 from ./refs/hg38.analysisSet.chroms/chrUn_KI270394v1.fa.gz
+INFO - read sequence chr18 of length 80373285 from ./refs/hg38.analysisSet.chroms/chr18.fa.gz
+INFO - read sequence chrUn_KI270384v1 of length 1658 from ./refs/hg38.analysisSet.chroms/chrUn_KI270384v1.fa.gz
+INFO - read sequence chrUn_KI270338v1 of length 1428 from ./refs/hg38.analysisSet.chroms/chrUn_KI270338v1.fa.gz
+INFO - read sequence chr22_KI270736v1_random of length 181920 from ./refs/hg38.analysisSet.chroms/chr22_KI270736v1_random.fa.gz
+INFO - read sequence chrUn_KI270381v1 of length 1930 from ./refs/hg38.analysisSet.chroms/chrUn_KI270381v1.fa.gz
+INFO - read sequence chrUn_KI270391v1 of length 1484 from ./refs/hg38.analysisSet.chroms/chrUn_KI270391v1.fa.gz
+INFO - read sequence chr14_GL000009v2_random of length 201709 from ./refs/hg38.analysisSet.chroms/chr14_GL000009v2_random.fa.gz
+INFO - read sequence ENA|CM000676|CM000676.2 Homo sapiens chromosome 14, GRCh38 reference primary assembly. of length 107043718 from ./refs/hg38.analysisSet.chroms/chr14.fa.gz
+INFO - read sequence chrUn_KI270467v1 of length 3920 from ./refs/hg38.analysisSet.chroms/chrUn_KI270467v1.fa.gz
+INFO - read sequence chrUn_GL000224v1 of length 179693 from ./refs/hg38.analysisSet.chroms/chrUn_GL000224v1.fa.gz
+INFO - read sequence chrUn_KI270317v1 of length 37690 from ./refs/hg38.analysisSet.chroms/chrUn_KI270317v1.fa.gz
+INFO - read sequence chrUn_KI270375v1 of length 2378 from ./refs/hg38.analysisSet.chroms/chrUn_KI270375v1.fa.gz
+INFO - read sequence chrUn_KI270530v1 of length 2168 from ./refs/hg38.analysisSet.chroms/chrUn_KI270530v1.fa.gz
+INFO - read sequence chrUn_KI270448v1 of length 7992 from ./refs/hg38.analysisSet.chroms/chrUn_KI270448v1.fa.gz
+INFO - read sequence chr1_KI270711v1_random of length 42210 from ./refs/hg38.analysisSet.chroms/chr1_KI270711v1_random.fa.gz
+INFO - read sequence chr17_KI270730v1_random of length 112551 from ./refs/hg38.analysisSet.chroms/chr17_KI270730v1_random.fa.gz
+INFO - read sequence chrUn_KI270589v1 of length 44474 from ./refs/hg38.analysisSet.chroms/chrUn_KI270589v1.fa.gz
+INFO - read sequence chr22_KI270731v1_random of length 150754 from ./refs/hg38.analysisSet.chroms/chr22_KI270731v1_random.fa.gz
+INFO - read sequence chrUn_KI270516v1 of length 1300 from ./refs/hg38.analysisSet.chroms/chrUn_KI270516v1.fa.gz
+INFO - read sequence chrUn_KI270388v1 of length 1216 from ./refs/hg38.analysisSet.chroms/chrUn_KI270388v1.fa.gz
+INFO - read sequence chrUn_KI270529v1 of length 1899 from ./refs/hg38.analysisSet.chroms/chrUn_KI270529v1.fa.gz
+INFO - read sequence chrUn_KI270539v1 of length 993 from ./refs/hg38.analysisSet.chroms/chrUn_KI270539v1.fa.gz
+INFO - read sequence chr16 of length 90338345 from ./refs/hg38.analysisSet.chroms/chr16.fa.gz
+INFO - read sequence chrUn_KI270590v1 of length 4685 from ./refs/hg38.analysisSet.chroms/chrUn_KI270590v1.fa.gz
+INFO - read sequence chrM of length 16569 from ./refs/hg38.analysisSet.chroms/chrM.fa.gz
+INFO - read sequence chrUn_KI270580v1 of length 1553 from ./refs/hg38.analysisSet.chroms/chrUn_KI270580v1.fa.gz
+INFO - read sequence chr22_KI270739v1_random of length 73985 from ./refs/hg38.analysisSet.chroms/chr22_KI270739v1_random.fa.gz
+INFO - read sequence chr2 of length 242193529 from ./refs/hg38.analysisSet.chroms/chr2.fa.gz
+INFO - read sequence chrUn_KI270755v1 of length 36723 from ./refs/hg38.analysisSet.chroms/chrUn_KI270755v1.fa.gz
+INFO - read sequence chrUn_KI270745v1 of length 41891 from ./refs/hg38.analysisSet.chroms/chrUn_KI270745v1.fa.gz
+INFO - read sequence chrUn_KI270423v1 of length 981 from ./refs/hg38.analysisSet.chroms/chrUn_KI270423v1.fa.gz
+INFO - read sequence chr12 of length 133275309 from ./refs/hg38.analysisSet.chroms/chr12.fa.gz
+INFO - read sequence chrUn_KI270507v1 of length 5353 from ./refs/hg38.analysisSet.chroms/chrUn_KI270507v1.fa.gz
+INFO - read sequence chrUn_KI270517v1 of length 3253 from ./refs/hg38.analysisSet.chroms/chrUn_KI270517v1.fa.gz
+INFO - read sequence chr2_KI270715v1_random of length 161471 from ./refs/hg38.analysisSet.chroms/chr2_KI270715v1_random.fa.gz
+INFO - read sequence chrUn_KI270389v1 of length 1298 from ./refs/hg38.analysisSet.chroms/chrUn_KI270389v1.fa.gz
+INFO - read sequence chrUn_KI270330v1 of length 1652 from ./refs/hg38.analysisSet.chroms/chrUn_KI270330v1.fa.gz
+INFO - read sequence chrUn_KI270320v1 of length 4416 from ./refs/hg38.analysisSet.chroms/chrUn_KI270320v1.fa.gz
+INFO - read sequence chr6 of length 170805979 from ./refs/hg38.analysisSet.chroms/chr6.fa.gz
+INFO - read sequence chr22_KI270738v1_random of length 99375 from ./refs/hg38.analysisSet.chroms/chr22_KI270738v1_random.fa.gz
+INFO - read sequence chrUn_GL000213v1 of length 164239 from ./refs/hg38.analysisSet.chroms/chrUn_GL000213v1.fa.gz
+INFO - read sequence chrUn_KI270581v1 of length 7046 from ./refs/hg38.analysisSet.chroms/chrUn_KI270581v1.fa.gz
+INFO - read sequence chrUn_KI270591v1 of length 5796 from ./refs/hg38.analysisSet.chroms/chrUn_KI270591v1.fa.gz
+INFO - read sequence chr4_GL000008v2_random of length 209709 from ./refs/hg38.analysisSet.chroms/chr4_GL000008v2_random.fa.gz
+INFO - read sequence chrUn_KI270538v1 of length 91309 from ./refs/hg38.analysisSet.chroms/chrUn_KI270538v1.fa.gz
+INFO - read sequence chrUn_KI270528v1 of length 2983 from ./refs/hg38.analysisSet.chroms/chrUn_KI270528v1.fa.gz
+INFO - read sequence chrUn_KI270744v1 of length 168472 from ./refs/hg38.analysisSet.chroms/chrUn_KI270744v1.fa.gz
+INFO - read sequence chrUn_KI270754v1 of length 40191 from ./refs/hg38.analysisSet.chroms/chrUn_KI270754v1.fa.gz
+INFO - read sequence chrUn_KI270422v1 of length 1445 from ./refs/hg38.analysisSet.chroms/chrUn_KI270422v1.fa.gz
+INFO - read sequence chrEBV of length 171823 from ./refs/hg38.analysisSet.chroms/chrEBV.fa.gz
+INFO - read sequence chr14_KI270726v1_random of length 43739 from ./refs/hg38.analysisSet.chroms/chr14_KI270726v1_random.fa.gz
+INFO - read sequence chrUn_KI270390v1 of length 2387 from ./refs/hg38.analysisSet.chroms/chrUn_KI270390v1.fa.gz
+INFO - read sequence chrUn_KI270329v1 of length 1040 from ./refs/hg38.analysisSet.chroms/chrUn_KI270329v1.fa.gz
+INFO - read sequence chrUn_KI270414v1 of length 2489 from ./refs/hg38.analysisSet.chroms/chrUn_KI270414v1.fa.gz
+INFO - read sequence chrUn_KI270466v1 of length 1233 from ./refs/hg38.analysisSet.chroms/chrUn_KI270466v1.fa.gz
+INFO - read sequence chr1_KI270710v1_random of length 40176 from ./refs/hg38.analysisSet.chroms/chr1_KI270710v1_random.fa.gz
+INFO - read sequence chrUn_KI270316v1 of length 1444 from ./refs/hg38.analysisSet.chroms/chrUn_KI270316v1.fa.gz
+INFO - read sequence chr4 of length 190214555 from ./refs/hg38.analysisSet.chroms/chr4.fa.gz
+INFO - read sequence chr22_KI270737v1_random of length 103838 from ./refs/hg38.analysisSet.chroms/chr22_KI270737v1_random.fa.gz
+INFO - read sequence chr10 of length 133797422 from ./refs/hg38.analysisSet.chroms/chr10.fa.gz
+INFO - read sequence chrUn_KI270588v1 of length 6158 from ./refs/hg38.analysisSet.chroms/chrUn_KI270588v1.fa.gz
+INFO - read sequence chrUn_KI270521v1 of length 7642 from ./refs/hg38.analysisSet.chroms/chrUn_KI270521v1.fa.gz
+INFO - read sequence chrUn_KI270374v1 of length 2656 from ./refs/hg38.analysisSet.chroms/chrUn_KI270374v1.fa.gz
+INFO - read sequence chrUn_KI270364v1 of length 2855 from ./refs/hg38.analysisSet.chroms/chrUn_KI270364v1.fa.gz
+INFO - read sequence chr1_KI270707v1_random of length 32032 from ./refs/hg38.analysisSet.chroms/chr1_KI270707v1_random.fa.gz
+INFO - read sequence chr1_KI270712v1_random of length 176043 from ./refs/hg38.analysisSet.chroms/chr1_KI270712v1_random.fa.gz
+INFO - read sequence chrUn_KI270322v1 of length 21476 from ./refs/hg38.analysisSet.chroms/chrUn_KI270322v1.fa.gz
+INFO - read sequence chrUn_KI270340v1 of length 1428 from ./refs/hg38.analysisSet.chroms/chrUn_KI270340v1.fa.gz
+INFO - read sequence chrUn_KI270515v1 of length 6361 from ./refs/hg38.analysisSet.chroms/chrUn_KI270515v1.fa.gz
+INFO - read sequence chr14_KI270724v1_random of length 39555 from ./refs/hg38.analysisSet.chroms/chr14_KI270724v1_random.fa.gz
+INFO - read sequence chrUn_KI270548v1 of length 1599 from ./refs/hg38.analysisSet.chroms/chrUn_KI270548v1.fa.gz
+INFO - read sequence chrUn_KI270420v1 of length 2321 from ./refs/hg38.analysisSet.chroms/chrUn_KI270420v1.fa.gz
+INFO - read sequence chrUn_KI270756v1 of length 79590 from ./refs/hg38.analysisSet.chroms/chrUn_KI270756v1.fa.gz
+INFO - read sequence chrUn_KI270746v1 of length 66486 from ./refs/hg38.analysisSet.chroms/chrUn_KI270746v1.fa.gz
+INFO - read sequence chrY_KI270740v1_random of length 37240 from ./refs/hg38.analysisSet.chroms/chrY_KI270740v1_random.fa.gz
+INFO - read sequence chr3 of length 198295559 from ./refs/hg38.analysisSet.chroms/chr3.fa.gz
+INFO - read sequence chr22_KI270735v1_random of length 42811 from ./refs/hg38.analysisSet.chroms/chr22_KI270735v1_random.fa.gz
+INFO - read sequence chrUn_KI270593v1 of length 3041 from ./refs/hg38.analysisSet.chroms/chrUn_KI270593v1.fa.gz
+INFO - read sequence chrUn_KI270583v1 of length 1400 from ./refs/hg38.analysisSet.chroms/chrUn_KI270583v1.fa.gz
+INFO - read sequence chr17 of length 83257441 from ./refs/hg38.analysisSet.chroms/chr17.fa.gz
+INFO - read sequence chrUn_KI270442v1 of length 392061 from ./refs/hg38.analysisSet.chroms/chrUn_KI270442v1.fa.gz
+INFO - read sequence chr15 of length 101991189 from ./refs/hg38.analysisSet.chroms/chr15.fa.gz
+INFO - read sequence chr14_KI270723v1_random of length 38115 from ./refs/hg38.analysisSet.chroms/chr14_KI270723v1_random.fa.gz
+INFO - read sequence chrUn_KI270382v1 of length 4215 from ./refs/hg38.analysisSet.chroms/chrUn_KI270382v1.fa.gz
+INFO - read sequence chrUn_KI270392v1 of length 971 from ./refs/hg38.analysisSet.chroms/chrUn_KI270392v1.fa.gz
+INFO - read sequence chr9_KI270719v1_random of length 176845 from ./refs/hg38.analysisSet.chroms/chr9_KI270719v1_random.fa.gz
+INFO - read sequence CM000683.2 Homo sapiens chromosome 21, GRCh38 reference primary assembly of length 46709983 from ./refs/hg38.analysisSet.chroms/CM000683.2.fa.gz
+INFO - read sequence chr1 of length 248956422 from ./refs/hg38.analysisSet.chroms/chr1.fa.gz
+INFO - read sequence chrUn_GL000218v1 of length 161147 from ./refs/hg38.analysisSet.chroms/chrUn_GL000218v1.fa.gz
+INFO - read sequence ENA|CM000667|CM000667.2 Homo sapiens chromosome 5, GRCh38 reference primary assembly. of length 181538259 from ./refs/hg38.analysisSet.chroms/CM000667.2.fa.gz
+INFO - read sequence chrUn_KI270366v1 of length 8320 from ./refs/hg38.analysisSet.chroms/chrUn_KI270366v1.fa.gz
+INFO - read sequence chrUn_KI270376v1 of length 1136 from ./refs/hg38.analysisSet.chroms/chrUn_KI270376v1.fa.gz
+INFO - read sequence chrUn_KI270429v1 of length 1361 from ./refs/hg38.analysisSet.chroms/chrUn_KI270429v1.fa.gz
+INFO - read sequence chrUn_KI270304v1 of length 2165 from ./refs/hg38.analysisSet.chroms/chrUn_KI270304v1.fa.gz
+INFO - read sequence chr1_KI270708v1_random of length 127682 from ./refs/hg38.analysisSet.chroms/chr1_KI270708v1_random.fa.gz
+INFO - read sequence chr17_KI270729v1_random of length 280839 from ./refs/hg38.analysisSet.chroms/chr17_KI270729v1_random.fa.gz
+INFO - read sequence chr22_KI270732v1_random of length 41543 from ./refs/hg38.analysisSet.chroms/chr22_KI270732v1_random.fa.gz
+INFO - read sequence chrUn_KI270465v1 of length 1774 from ./refs/hg38.analysisSet.chroms/chrUn_KI270465v1.fa.gz
+INFO - read sequence chrUn_GL000219v1 of length 179198 from ./refs/hg38.analysisSet.chroms/chrUn_GL000219v1.fa.gz
+INFO - read sequence chr22_KI270733v1_random of length 179772 from ./refs/hg38.analysisSet.chroms/chr22_KI270733v1_random.fa.gz
+INFO - read sequence chrUn_KI270417v1 of length 2043 from ./refs/hg38.analysisSet.chroms/chrUn_KI270417v1.fa.gz
+INFO - read sequence chrUn_KI270393v1 of length 1308 from ./refs/hg38.analysisSet.chroms/chrUn_KI270393v1.fa.gz
+INFO - read sequence chrUn_KI270383v1 of length 1750 from ./refs/hg38.analysisSet.chroms/chrUn_KI270383v1.fa.gz
+INFO - read sequence chr1_KI270709v1_random of length 66860 from ./refs/hg38.analysisSet.chroms/chr1_KI270709v1_random.fa.gz
+INFO - read sequence chrUn_KI270522v1 of length 5674 from ./refs/hg38.analysisSet.chroms/chrUn_KI270522v1.fa.gz
+INFO - read sequence chr1_KI270714v1_random of length 41717 from ./refs/hg38.analysisSet.chroms/chr1_KI270714v1_random.fa.gz
+INFO - read sequence chr11 of length 135086622 from ./refs/hg38.analysisSet.chroms/chr11.fa.gz
+INFO - read sequence ENA|CM000667|CM000667.2 Homo sapiens chromosome 5, GRCh38 reference primary assembly. of length 181538259 from ./refs/hg38.analysisSet.chroms/chr5.fa.gz
+INFO - read sequence chr2_KI270716v1_random of length 153799 from ./refs/hg38.analysisSet.chroms/chr2_KI270716v1_random.fa.gz
+INFO - read sequence chrUn_KI270315v1 of length 2276 from ./refs/hg38.analysisSet.chroms/chrUn_KI270315v1.fa.gz
+INFO - read sequence chr9_KI270718v1_random of length 38054 from ./refs/hg38.analysisSet.chroms/chr9_KI270718v1_random.fa.gz
+INFO - read sequence chrUn_KI270305v1 of length 1472 from ./refs/hg38.analysisSet.chroms/chrUn_KI270305v1.fa.gz
+INFO - read sequence chrUn_KI270438v1 of length 112505 from ./refs/hg38.analysisSet.chroms/chrUn_KI270438v1.fa.gz
+INFO - read sequence chrUn_GL000226v1 of length 15008 from ./refs/hg38.analysisSet.chroms/chrUn_GL000226v1.fa.gz
+INFO - read sequence chr14_KI270722v1_random of length 194050 from ./refs/hg38.analysisSet.chroms/chr14_KI270722v1_random.fa.gz
+INFO - read sequence chr7 of length 159345973 from ./refs/hg38.analysisSet.chroms/chr7.fa.gz
+INFO - read sequence chrUn_KI270333v1 of length 2699 from ./refs/hg38.analysisSet.chroms/chrUn_KI270333v1.fa.gz
+INFO - read sequence chr9_KI270717v1_random of length 40062 from ./refs/hg38.analysisSet.chroms/chr9_KI270717v1_random.fa.gz
+INFO - read sequence chr13 of length 114364328 from ./refs/hg38.analysisSet.chroms/chr13.fa.gz
+INFO - read sequence chr22_KI270734v1_random of length 165050 from ./refs/hg38.analysisSet.chroms/chr22_KI270734v1_random.fa.gz
+INFO - read sequence chr1_KI270713v1_random of length 40745 from ./refs/hg38.analysisSet.chroms/chr1_KI270713v1_random.fa.gz
+INFO - read sequence chr1_KI270706v1_random of length 175055 from ./refs/hg38.analysisSet.chroms/chr1_KI270706v1_random.fa.gz
+INFO - read sequence chrUn_KI270747v1 of length 198735 from ./refs/hg38.analysisSet.chroms/chrUn_KI270747v1.fa.gz
+INFO - read sequence chrUn_KI270757v1 of length 71251 from ./refs/hg38.analysisSet.chroms/chrUn_KI270757v1.fa.gz
+INFO - read sequence chr14_KI270725v1_random of length 172810 from ./refs/hg38.analysisSet.chroms/chr14_KI270725v1_random.fa.gz
+INFO - read sequence chrUn_KI270582v1 of length 6504 from ./refs/hg38.analysisSet.chroms/chrUn_KI270582v1.fa.gz
+INFO - read 194 contig(s) from ./HGSVC3/pav_HG00514_CCS_SS_PG_PRR.vcf.gz
+INFO - read 656556 insertions from ./HGSVC3/pav_HG00514_CCS_SS_PG_PRR.vcf.gz
+INFO - read 11194 insertions of length >= 100
+INFO - read 15875 ALU alignment(s) from CCS-ALU-water.out.gz
+INFO - read 15875 reverse strand ALU alignment(s) from CCS-ALU-water-rev.out.gz
+INFO - read 15875 SVA alignment(s) from CCS-SVA-water.out.gz
+INFO - read 15875 reverse strand SVA alignment(s) from CCS-SVA-water-rev.out.gz
+INFO - read 15875 LINE1 alignment(s) from CCS-LINE1-water.out.gz
+INFO - read 15875 reverse strand LINE1 alignment(s) from CCS-LINE1-water-rev.out.gz
+WARN - chr10:39479349   polyA and polyT both have score 6
+WARN - chr3:520225      polyA and polyT both have score 4
+WARN - chr4:184967533   longer TSD sequence found before insertion point
+WARN - chr7:107419569   polyA and polyT both have score 4
+WARN - chr8:63440213    polyA and polyT both have score 5
+WARN - chr9:24980781    polyA and polyT both have score 4
+INFO - read 11194 insertions from ./HGSVC3/pav_HG00514_CCS_SS_PG_PRR.vcf.gz
+INFO - found 30 insertion(s) of length >= 100 with TSDs _before_ the insertion point
+INFO - found 8315 insertion(s) of length >= 100 with TSDs _after_ the insertion point
+INFO - found 1818 insertion(s) of length >= 100 with ME matches
