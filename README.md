@@ -36,11 +36,54 @@ or workflows chaining together otherwise published tools) is listed in the follo
 For all other tools used in the HGSVC phase 3 paper, please refer to the respective
 method publication as referenced in the text.
 
-This repository contains a source copy (tarball) for all of the above software resources
-for the sole purpose of documenting a frozen state. For all inquiries about the respective
-software or feedback such as issue reports, please get in touch with the person listed
-in the software table as contact. Software-specific support requests issued in this
-repository will NOT be answered.
+This repository contains two version of the source code:
+
+1. a copy (tarball) for all of the above software resources for the sole purpose of documenting a frozen state
+2. a static copy, i.e. the unpacked tarball of the source code in the respective subfolder named `/plain`
+    - please note: the current (potentially updated) version of the source code is *only* available in
+    the respective GitHub repository (see the [tabular summary](software.tsv) or the more verbose
+    listing below)
+
+**Please note**: For all inquiries about the respective software or feedback such as issue reports,
+please get in touch with the person listed as contact or directly proceed to the external repository (see the following listing).
+Software-specific support requests issued in *this* repository will *NOT* be answered.
+
+#### Software: direct links to external repositories
+
+For your convenience, the following listing provides direct links
+to the main README of the external repositories ([tabular summary](software.tsv)):
+
+1. [Scripts used for annotating the MHC locus](https://github.com/DiltheyLab/MHC-annotation)
+    - contact: Alexander Dilthey
+2. [Jupyter notebooks for various HGSVC analyses, e.g., related to MEIs](https://github.com/Markloftus/HGSVC3)
+    - contact: Mark Loftus
+3. [code for building compacted DBGs, used in sample selection](https://github.com/tobiasrausch/kmerdbg)
+    - contact: Tobias Rausch
+4. [code implementing the analyses related to the PanGenie genotyping](https://github.com/eblerjana/hgsvc3)
+    - contact: Jana Ebler
+5. [R script implementing the analyses required from sample selection](https://github.com/asulovar/HGSVC3_sample_selection)
+    - contact: Arvis Sulovari
+6. [Scripts/workflow for evaluating genome assemblies](https://github.com/EichlerLab/assembly_eval)
+    - contact: Youngjun Kwon
+7. [Scripts for customized analyses related to, e.g., data management, assembly evaluation and plotting](https://github.com/core-unit-bioinformatics/project-run-hgsvc-hybrid-assemblies)
+    - contact: Peter Ebert
+8. [Repository of the L1ME-AID tool for MEI analysis](https://github.com/Markloftus/L1ME-AID)
+    - contact: Mark Loftus
+9. [Repository of the MELT-LRA tool for MEI analysis](https://github.com/Scott-Devine/MELT-LRA)
+    - contact: Scott Devine
+10. [Repository of the PALMER tool for MEI analysis](https://github.com/WeichenZhou/PALMER)
+    - contact: Weichen Zhou
+11. [Repository of the PAV tool for assembly-based variant calling](https://github.com/BeckLaboratory/pav)
+    - contact: Peter Audano
+12. [Workflow executing various tools for assembly evaluation](https://github.com/core-unit-bioinformatics/workflow-smk-assembly-evaluation/tree/prototype)
+    - contact: Peter Ebert
+13. [Workflow for annotating segmental duplications](https://github.com/ChaissonLab/SegDupAnnotation2)
+    - contact: Mark Chaisson
+14. [Workflow for producing phased Verkko assemblies](https://github.com/core-unit-bioinformatics/workflow-smk-genome-hybrid-assembly/tree/prototype)
+    - contact: Peter Ebert
+15. [Workflow for identifying centromere dip regions](https://github.com/EichlerLab/CDR-Finder_smk)
+    - contact: Glennis Logsdon
+
 
 ## Citation sources
 
