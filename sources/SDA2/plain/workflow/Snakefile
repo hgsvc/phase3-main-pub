@@ -1,0 +1,104 @@
+##### Segmental Duplication Annotation Pipeline
+#####
+##### Keon Rabbani
+##### krabbani@usc.edu
+##### Chaisson Lab
+##### University of Southern California
+
+##### Purpose: Count resolved and collapsed gene duplications given an assembly, gene model, and PacBio reads.
+
+### Import Libraries
+from snakemake.utils import validate
+from snakemake.utils import min_version
+import tempfile
+import shutil
+
+### Workflow Configurations
+min_version("7.25.0") # Created using Snakemake v7.32.4
+
+configfile: "config/sd_analysis.json"
+validate(config, "schemas/config.schema.json", set_default=True)
+
+containerized: "docker://krabbani/segdupannotation2:1.3.2.s"
+
+### Variables & Constants
+species=config["species"]
+readFiles={f.split("/")[-1]: f for f in config["reads"]}
+if config["hap2"] == "":
+    hap_aware_mode = False
+else:
+    hap_aware_mode = True
+
+# Rule Resource Variables
+if config["override_mem"] == -1:
+    cluster_mem_mb_baby   = config["cluster_mem_mb_baby"]
+    cluster_mem_mb_small  = config["cluster_mem_mb_small"]
+    cluster_mem_mb_medium = config["cluster_mem_mb_medium"]
+    cluster_mem_mb_large  = config["cluster_mem_mb_large"]
+    cluster_mem_mb_xlarge = config["cluster_mem_mb_xlarge"]
+else:
+    cluster_mem_mb_baby   = config["override_mem"]
+    cluster_mem_mb_small  = config["override_mem"]
+    cluster_mem_mb_medium = config["override_mem"]
+    cluster_mem_mb_large  = config["override_mem"]
+    cluster_mem_mb_xlarge = config["override_mem"]
+
+if config["override_num_cores"] == -1:
+    cluster_cpus_per_task_baby   = config["cluster_cpus_per_task_baby"]
+    cluster_cpus_per_task_small  = config["cluster_cpus_per_task_small"]
+    cluster_cpus_per_task_medium = config["cluster_cpus_per_task_medium"]
+    cluster_cpus_per_task_large  = config["cluster_cpus_per_task_large"]
+else:
+    cluster_cpus_per_task_baby   = config["override_num_cores"]
+    cluster_cpus_per_task_small  = config["override_num_cores"]
+    cluster_cpus_per_task_medium = config["override_num_cores"]
+    cluster_cpus_per_task_large  = config["override_num_cores"]
+
+OUTPUT_SUFFIXES=["_allHits","_groupedByExonOverlap","_groupedByAnyOverlap"]
+if hap_aware_mode:
+    OUTPUT_HAPLOTYPES=["hap1","hap2"]
+else:
+    OUTPUT_HAPLOTYPES=["pri"] # pri is for primary assembly
+
+### Create Temporary Directory
+tmpDir=tempfile.mkdtemp(suffix="_tmp",prefix=species+"_",dir=config["temp"])
+print("Temporary Directory Created: "+tmpDir,file=sys.stderr)
+
+### Load Rules
+if hap_aware_mode:
+    include: "rules/A_hapAware_process_reads.smk"
+else:
+    include: "rules/A_process_reads.smk"
+if config["reads"]:
+    include: "rules/B_hmm.smk"
+else:
+    include: "rules/B_bamless.smk"
+include: "rules/C_process_gene_model.smk"
+include: "rules/D_locate_resolved_gene_originals.smk"
+include: "rules/E_locate_resolved_gene_copies.smk"
+include: "rules/F_combine_genes_and_depth.smk"
+include: "rules/G_summarize_results.smk"
+
+### Target Rules
+rule all:
+    input:
+        expand("results/G01_dups{base}.bed", base=OUTPUT_SUFFIXES),
+        expand("results/G02_dups{base}_fact.bed", base=OUTPUT_SUFFIXES),
+        expand("results/G03_per_gene_counts{base}.tsv", base=OUTPUT_SUFFIXES),
+        expand("results/G04_summary_stats{base}.tsv", base=OUTPUT_SUFFIXES) #,
+        # "results/G05_depthPlot_merged.pdf"
+    localrule: True
+
+onstart:
+    print("Workflow started.")
+    if hap_aware_mode:
+        print("Haplotype Aware Mode Activated")
+onsuccess:
+    try:
+        shutil.rmtree(tmpDir)
+    except OSError as e:
+        print("Error: %s : %s" % (tmpDir,e.strerror))
+    print("Workflow finished without error.")
+onerror:
+    print("An error occurred. Check the .snakemake/log/ directory, the logs/ directory, and any cluster logs for details.")
+    print("The temporary directory "+tmpDir+" was not deleted.")

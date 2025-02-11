@@ -1,0 +1,233 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "SegDupAnnotation2 Configurations",
+    "description": "Config file for SegDupAnnotation2 used to annotate segmental duplications in a given species.",
+    "type": "object",
+    "properties": {
+        "species": {
+            "description": "The name, code, or identifier for the species or individual being processed.",
+            "type": "string"
+        },
+        "reads": {
+            "description": "List of paths to read files. Acceptable formats and extensions: bam, fastq.gz, fastq, fasta, and fa. (If none provided, workflow will run in 'bamless' mode and assume a read depth of 100 bp across the assembly. Output files will reflect this depth, and thus results may be confusing. For this reason it is not advised to use this workflow without pacbio read bams.)",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 0,
+            "uniqueItems": true,
+            "examples": [ [
+                "/scratch1/krabbani/data/raw_bTaeGut2/m54306U_210519_154448.hifi_reads.bam",
+                "/scratch1/krabbani/data/raw_bTaeGut2/m54306U_210521_004211.hifi_reads.bam"
+            ] ],
+            "default": []
+        },
+        "asm": {
+            "description": "File path to assembly of this species/individual's genome in fasta format. If using haplotype-aware mode, place haplotype 1 here.",
+            "type": "string",
+            "examples": [ "/scratch1/krabbani/data/raw_bTaeGut2/bTaeGut2.hic.hap1.s2.fasta",
+                          "/project/mchaisso_100/cmb-16/krabbani/analysis_hgsvc3/HG00171_hap1/results/HG00171.vrk-ps-sseq.asm-hap1.fasta" ]
+        },
+        "hap2": {
+            "description": "File path to haplotype 2 of this species/individual's genome in fasta format. If provided, will activate haplotype-aware mode. The contig/scaffold/chromosome names in the hap2 file must be unique relative to the provided asm/hap1 file.",
+            "type": "string",
+            "examples": [ "/project/mchaisso_100/cmb-16/krabbani/analysis_hgsvc3/HG00171_hap2/results/HG00171.vrk-ps-sseq.asm-hap2.fasta" ],
+            "default": ""
+        },
+        "genemodel": {
+            "description": "Fasta file path of RNA transcripts of chosen gene model. Assumes default refseq format where gene code is in paranthesis, and parses fasta headers to find gene codes. If this is not true, fasta must be reformatted with header as gene code only.",
+            "type": "string",
+            "examples": [ "/scratch1/krabbani/data/taeGut2/GCF_003957565.2_bTaeGut1.4.pri_rna.fna" ]
+        },
+        "temp": {
+            "description": "File path to an existing directory for temporary files.",
+            "type": "string",
+            "examples": [ "/scratch2/krabbani/sda_tmp/tmp_bTaeGut2_finch" ]
+        },
+        "read_type": {
+            "description": "Note PacBio read technology type (CLR vs CCS).",
+            "type": "string",
+            "enum": [ "CCS", "CLR" ],
+            "examples": [ "CCS", "CLR" ]
+        },
+        "haploid_chrs": {
+            "description": "List of haploid/sex chromosome names in given assembly. Remember Human female genomes have diploid X chromosomes. Will only be used if flag_autodetect_haloid_chrs is not explicitly set to 'true'. Only helpful in haplotype-unaware mode to ensure collapsed duplications on haploid chromosomes are detected appropriately.",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 0,
+            "uniqueItems": true,
+            "examples": [ [
+                "NC_064848.1",
+                "NC_064856.1"
+            ], [
+                "SUPER_W",
+                "SUPER_Z"
+            ] ],
+            "default": []
+        },
+        "flag_autodetect_haploid_chrs": {
+            "description": "When true autodetects whether a chromosome is haploid or diploid to inform correct gene duplication accounting in rule F05_FindDups. Rule B05 detects haploid chromosomes by looking for chromosomes with half the mean depth of the assembly. Chromosomes smaller than 10 Mb will not be selected as haploid chromosomes. Only helpful in haplotype-unaware mode to ensure collapsed duplications on haploid chromosomes are detected appropriately.",
+            "type": "boolean",
+            "examples": [ true, false],
+            "default": false
+        },
+        "bed_for_filtering_results": {
+            "description": "Bed file path of assembly coordinates to filter out of results.",
+            "type": "string",
+            "examples": [ "/scratch2/krabbani/sda_tmp/tmp_bTaeGut2_finch" ],
+            "default": ""
+        },
+        "flagger_components_to_filter": {
+            "description": "Provide flagger bed file to bed_for_filtering_results option. Here list which flagger components to exclude from analysis. Reference https://github.com/mobinasri/flagger for component descriptions.",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [ "Err", "Dup", "Hap", "Col", "Unk" ]
+            },
+            "minItems": 0,
+            "uniqueItems": true,
+            "examples": [ [], ["Err"], ["Err", "Dup"] ],
+            "default": []
+        },
+        "min_copy_identity": {
+            "description": "Minimum gene copy identity to keep when the gene copy is compared to the original copy.",
+            "type": "number",
+            "default": 0.90
+        },
+        "min_hit_length": {
+            "description": "Minimum hit length to keep in bases.",
+            "type": "integer",
+            "default": 5000
+        },
+        "max_length_margin": {
+            "description": "Keep gene copies with length within <max_length_margin> of the original gene's length.",
+            "type": "number",
+            "default": 0.10
+        },
+        "min_gene_model_alignment": {
+            "description": "Minimum percent alignment of gene model to gene copy as a decimal.",
+            "type": "number",
+            "default": 0.75
+        },
+        "min_depth": {
+            "description": "Minimum mean copy depth to keep as percentage of mean assembly depth.",
+            "type": "number",
+            "default": 0.05
+        },
+        "flag_filt_single_exon_genes": {
+            "description": "When true keeps only genes with multiple exons.",
+            "type": "boolean",
+            "examples": [ true, false],
+            "default": true
+        },
+        "flag_force_hmm": {
+            "description": "When true, uses the hidden markov copy number caller instead of samtools' mpileup to determine depth in 100 bp reads. This is not a recommended option, and may fail if no reads map to a single chromosome/scaffold.",
+            "type": "boolean",
+            "examples": [ true, false],
+            "default": false
+        },
+        "flag_assume_clear_and_unique_gene_codes": {
+            "description": "When false, assumes gene model fasta headers are in default RefSeq format, and thus renames all headers based on gene symbol in parenthesis at end of header line.",
+            "type": "boolean",
+            "examples": [ true, false],
+            "default": true
+        },
+        "flag_filt_uncharacterized_genes": {
+            "description": "When true filters out genes in gene model with gene names beginning with 'LOC'.",
+            "type": "boolean",
+            "examples": [ true, false],
+            "default": false
+        },
+        "uncharacterized_gene_name_prefix": {
+            "description": "Gene model gene name prefix to filter out when flag_filt_uncharacterized_genes is true. Also used by Network Filter to deprioritize uncharacterized genes when picking a representative gene for a gene family.",
+            "type": "string",
+            "examples": ["ENSG", "LOC"]
+        },
+        "cluster_mem_mb_baby": {
+            "description": "The memory in MB a cluster node or cpu must provide for a computationally simple job. In practice this parameter is combined with a cluster_cpus_per_task_<size> parameter by some rules to create a SLURM or other cluster job.",
+            "type": "integer",
+            "examples": [ 1000, 6000, 32000, 48000, 130000 ],
+            "default": 1000
+        },
+        "cluster_mem_mb_small": {
+            "description": "The memory in MB a cluster node or cpu must provide for a computationally simple job. In practice this parameter is combined with a cluster_cpus_per_task_<size> parameter by some rules to create a SLURM or other cluster job.",
+            "type": "integer",
+            "examples": [ 1000, 6000, 32000, 48000, 130000 ],
+            "default": 6000
+        },
+        "cluster_mem_mb_medium": {
+            "description": "The memory in MB a cluster node or cpu must provide for a computationally mild job. In practice this parameter is combined with a cluster_cpus_per_task_<size> parameter by some rules to create a SLURM or other cluster job.",
+            "type": "integer",
+            "examples": [ 1000, 6000, 32000, 48000, 130000 ],
+            "default": 6000
+        },
+        "cluster_mem_mb_large": {
+            "description": "The memory in MB a cluster node or cpu must provide for a computationally intense job. In practice this parameter is combined with a cluster_cpus_per_task_<size> parameter by some rules to create a SLURM or other cluster job.",
+            "type": "integer",
+            "examples": [ 1000, 6000, 32000, 48000, 130000 ],
+            "default": 6000
+        },
+        "cluster_mem_mb_xlarge": {
+            "description": "The memory in MB a cluster node or cpu must provide for a computationally intense job. In practice this parameter is combined with a cluster_cpus_per_task_<size> parameter by some rules to create a SLURM or other cluster job.",
+            "type": "integer",
+            "examples": [ 1000, 6000, 32000, 48000, 130000 ],
+            "default": 6000
+        },
+        "cluster_cpus_per_task_baby": {
+            "description": "The number of cpus per task for a computationally simple rule. In practice this parameter is combined with a cluster_mem_mb_<size> parameter by some rules to create a SLURM or other cluster job.",
+            "type": "integer",
+            "examples": [ 1, 4, 16, 64 ],
+            "default": 1
+        },
+        "cluster_cpus_per_task_small": {
+            "description": "The number of cpus per task for a computationally mild rule. In practice this parameter is combined with a cluster_mem_mb_<size> parameter by some rules to create a SLURM or other cluster job.",
+            "type": "integer",
+            "examples": [ 1, 4, 16, 64 ],
+            "default": 3
+        },
+        "cluster_cpus_per_task_medium": {
+            "description": "The number of cpus per task for a computationally intense rule. In practice this parameter is combined with a cluster_mem_mb_<size> parameter by some rules to create a SLURM or other cluster job.",
+            "type": "integer",
+            "examples": [ 1, 4, 16, 64 ],
+            "default": 3
+        },
+        "cluster_cpus_per_task_large": {
+            "description": "The number of cpus per task for a computationally intense rule. In practice this parameter is combined with a cluster_mem_mb_<size> parameter by some rules to create a SLURM or other cluster job.",
+            "type": "integer",
+            "examples": [ 1, 4, 16, 64 ],
+            "default": 3
+        },
+        "cluster_runtime_short": {
+            "description": "The walltime in minutes allocated for rules expected to take a relatively short amount of time (like 4 hrs). This parameter is only used if called in the cluster_exec parameter or by snakemake's --slurm command line paramter.",
+            "type": "integer",
+            "examples": [ 60, 240, 1440 ],
+            "default": 240
+        },
+        "cluster_runtime_long": {
+            "description": "The walltime in minutes allocated for rules expected to take a relatively long amount of time (like 24 hrs). This parameter is only used if called in the cluster_exec parameter or by snakemake's --slurm command line paramter.",
+            "type": "integer",
+            "examples": [ 60, 240, 1440 ],
+            "default": 240
+        },
+        "override_mem": {
+            "description": "Override the memory available in MB otherwise defined by the cluster_mem_mb_<size> parameters in MB. If set to -1, the cluster_mem_mb_<X> paramters will not be overwritten.",
+            "type": "integer",
+            "examples": [ -1, 4000 ],
+            "default": -1
+        },
+        "override_num_cores": {
+            "description": "Override the number of allocated cores otherwise defined by the cluster_cpus_per_task_<size> parameters. If set to -1, the cluster_cpus_per_task_<size> paramters will not be overwritten.",
+            "type": "integer",
+            "examples": [ -1, 5 ],
+            "default": -1
+        }
+    },
+    "required": [
+        "species",
+        "asm",
+        "genemodel",
+        "temp"
+    ]
+}

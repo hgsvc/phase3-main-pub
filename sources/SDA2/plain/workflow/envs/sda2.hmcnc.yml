@@ -1,0 +1,15 @@
+name: sda2_hmcnc_env
+# Conda may fail in solving environment if channel_priority is set to strict.
+# If it fails, check your ~/.condarc config file's channel_priority param.
+channels:
+  - bioconda
+  - conda-forge
+  - krabbani
+  - nodefaults
+dependencies:
+  - bioconda::snakemake>=7.25.0 # 7.32.4
+  - boost # 1.82.0
+  - intervaltree # 3.1.0
+  - tabix # 1.11
+  - hmcnc # 1.0
+# Version nums commented out following dependencies are versions used by authors.

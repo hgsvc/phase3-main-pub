@@ -1,0 +1,38 @@
+{
+    "species": "mSunEtr1",
+    "reads": [
+        "/scratch2/krabbani/analysis_mSunEtr1/reads/m54306U_200307_130101.subreads.bam",
+        "/scratch2/krabbani/analysis_mSunEtr1/reads/m54306U_200316_204340.subreads.bam",
+        "/scratch2/krabbani/analysis_mSunEtr1/reads/m64055_200704_071621.subreads.bam"
+    ],
+    "asm": "/scratch2/krabbani/analysis_mSunEtr1/GCF_024139225.1_mSunEtr1.pri.cur_genomic.fna",
+    "genemodel": "/scratch2/krabbani/analysis_mSunEtr1/GCF_024139225.1_mSunEtr1.pri.cur_rna.fna",
+    "temp": "/scratch1/krabbani/sda_tmp/",
+    "read_type": "CLR",
+
+    "flag_assume_clear_and_unique_gene_codes": false,
+    "flag_filt_uncharacterized_genes": true,
+    "uncharacterized_gene_name_prefix": "LOC",
+
+    "flag_autodetect_haploid_chrs": false,
+    "min_gene_model_alignment": 0.50,
+    "haploid_chrs": ["NC_064868.1",
+                     "NC_064869.1",
+                     "NW_026060304.1",
+                     "NW_026060332.1"],
+
+
+    "cluster_mem_mb_baby": 1000,
+    "cluster_mem_mb_small": 6000,
+    "cluster_mem_mb_medium": 32000,
+    "cluster_mem_mb_large": 48000,
+    "cluster_mem_mb_xlarge": 130000,
+    
+    "cluster_cpus_per_task_baby": 1,
+    "cluster_cpus_per_task_small": 4,
+    "cluster_cpus_per_task_medium": 16,
+    "cluster_cpus_per_task_large": 64,
+
+    "cluster_runtime_short": 240,
+    "cluster_runtime_long": 1440
+}

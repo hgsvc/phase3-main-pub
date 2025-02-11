@@ -1,0 +1,34 @@
+{
+    "COMMENT": "Example of config parameters used in HGSVC3 paper - https://doi.org/10.1101/2024.09.24.614721.",
+
+
+    "species": "HG00096",
+    "reads": [
+    ],
+    "asm": "HG00096.vrk-ps-sseq.asm-hap1.fasta",
+    "hap2": "HG00096.vrk-ps-sseq.asm-hap2.fasta",
+    "genemodel": "gencode.v44.transcripts.genesCollapsed.renamed.fa",
+    "temp": "/panfs/qcb-panasas/krabbani/sda_tmp",
+    "read_type": "CCS",
+    "flag_assume_clear_and_unique_gene_codes": true,
+    "flag_filt_uncharacterized_genes": true,
+    "bed_for_filtering_results": "flagger/verkko/HG00096-verkko.verkko.alt_removed.flagger_final.bed",
+    "flagger_components_to_filter": ["Err","Dup"],
+    "uncharacterized_gene_name_prefix": "ENSG",
+
+    "flag_autodetect_haploid_chrs": true,
+    "min_gene_model_alignment": 0.95,
+
+    "cluster_mem_mb_baby": 1000,
+    "cluster_mem_mb_small": 6000,
+    "cluster_mem_mb_medium": 32000,
+    "cluster_mem_mb_large": 48000,
+    "cluster_mem_mb_xlarge": 130000,
+    "cluster_cpus_per_task_baby": 1,
+    "cluster_cpus_per_task_small": 4,
+    "cluster_cpus_per_task_medium": 16,
+    "cluster_cpus_per_task_large": 64,
+
+    "cluster_runtime_short": 240,
+    "cluster_runtime_long": 1440
+}
