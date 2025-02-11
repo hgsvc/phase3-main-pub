@@ -1,0 +1,9 @@
+name: plotting
+dependencies:
+  - matplotlib
+  - pandas
+  - seaborn
+  - upsetplot
+  - scipy
+  - scikit-learn
+  - bedtools

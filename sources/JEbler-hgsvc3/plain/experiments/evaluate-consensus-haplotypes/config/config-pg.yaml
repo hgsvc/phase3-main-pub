@@ -1,0 +1,7 @@
+agc: "inputs/shapeit-pangenie_chm13_all_consensus-haplotypes.agc"
+consensus: "inputs/PanGenie-SHAPEIT_all_summary.tsv"
+assemblies: "inputs/assemblies.tsv"
+reference: "inputs/chm13v2.0.fa.gz"
+outname: "results-consensus-PG"
+
+use_consensus_as_ref: True

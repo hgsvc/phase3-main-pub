@@ -1,0 +1,116 @@
+configfile: "config/config.yaml"
+
+import os.path
+
+USE_CONS = config['use_consensus_as_ref']
+
+RESULTS = config["outname"]
+AGC = config["agc"]
+SAMPLES = [] 
+REFERENCES = {}
+QV = {}
+CONSENSUS_NAMES = {}
+ASSEMBLIES = {}
+REGIONS = {}
+
+
+# parse assemblies to be used to align against
+columns = []
+for line in open(config['assemblies'], 'r'):
+	fields = line.strip().split()
+	if line.startswith('#sample'):
+		columns = fields[3:]
+		continue
+	sample = fields[0]
+	assem1 = fields[1]
+	assem2 = fields[2]
+	SAMPLES.append(sample)
+
+	# make sure all files are gzipped and indexed
+	for f in [assem1, assem2]:
+		if not f.endswith('.gz'):
+			raise RuntimeError('File ' + f + ' is not gzipped.')
+		if not os.path.isfile(f + '.fai'):
+			raise RuntimeError('File ' + f + ' does not have a .fai index.')
+
+	if USE_CONS:
+		ASSEMBLIES[sample] = {}
+		ASSEMBLIES[sample + '_REF'] = {}
+		ASSEMBLIES[sample]["H1"] = assem1
+		ASSEMBLIES[sample]["H2"] = assem2
+		ASSEMBLIES[sample + '_REF']["H1"] = assem1
+		ASSEMBLIES[sample + '_REF']["H2"] = assem2
+
+	else:
+		REFERENCES[sample] = {}
+		REFERENCES[sample + '_REF'] = {}
+		REFERENCES[sample]["H1"] = assem1
+		REFERENCES[sample]["H2"] = assem2
+		REFERENCES[sample + '_REF']["H1"] = assem1
+		REFERENCES[sample + '_REF']["H2"] = assem2
+
+#		for column,f in zip(columns, fields[3:]):
+#			region_name = column.split('_')[0]
+#			haplotype = column.split('_')[1]
+#			if not region_name in REGIONS:
+#				REGIONS[region_name] = {}
+#			if not sample in REGIONS[region_name]:
+#				REGIONS[region_name][sample] = {}
+#				REGIONS[region_name][sample + '_REF'] = {}
+#			REGIONS[region_name][sample][haplotype] = f
+#			REGIONS[region_name][sample + '_REF'][haplotype] = f
+
+
+# parse QVs and names of consensus haplotypes (to be extracted from agc file)
+for line in open(config['consensus'], 'r'):
+	fields = line.strip().split()
+	sample = fields[0]
+	if sample in SAMPLES:
+
+		CONSENSUS_NAMES[sample] = {}
+
+		CONSENSUS_NAMES[sample]["H1"] = fields[1]
+		CONSENSUS_NAMES[sample]["H2"] = fields[2]
+
+		QV[sample] = {}
+		QV[sample]["H1"] = fields[3]
+		QV[sample]["H2"] = fields[4]
+
+		QV[sample + '_REF'] = {}
+		QV[sample + '_REF']["H1"] = "nan"
+		QV[sample + '_REF']["H2"] = "nan"
+
+
+
+# consensus haplotype FASTA files to be extracted
+for sample in SAMPLES:
+	if USE_CONS:
+		REFERENCES[sample] = {}
+		REFERENCES[sample]["H1"] = "{results}/data/{sample}_{haplotype}/{sample}_{haplotype}_consensus.fa.gz".format(results = RESULTS, sample = sample, haplotype = "H1")
+		REFERENCES[sample]["H2"] = "{results}/data/{sample}_{haplotype}/{sample}_{haplotype}_consensus.fa.gz".format(results = RESULTS, sample = sample, haplotype = "H2")
+
+		REFERENCES[sample + '_REF'] = {}
+		REFERENCES[sample + '_REF']["H1"] = config['reference']
+		REFERENCES[sample + '_REF']["H2"] = config['reference']
+
+	else:
+		ASSEMBLIES[sample] = {}
+		ASSEMBLIES[sample]["H1"] = "{results}/data/{sample}_{haplotype}/{sample}_{haplotype}_consensus.fa.gz".format(results = RESULTS, sample = sample, haplotype = "H1")
+		ASSEMBLIES[sample]["H2"] = "{results}/data/{sample}_{haplotype}/{sample}_{haplotype}_consensus.fa.gz".format(results = RESULTS, sample = sample, haplotype = "H2")
+
+		ASSEMBLIES[sample + '_REF'] = {}
+		ASSEMBLIES[sample + '_REF']["H1"] = config['reference']
+		ASSEMBLIES[sample + '_REF']["H2"] = config['reference']
+
+
+
+include: "rules/extract-consensus-fasta.smk"
+include: "rules/run-pav.smk"
+include: "rules/evaluate.smk"
+
+rule all:
+	input:
+		expand("{results}/pav_{sample}_{haplotype}/run.complete", results = RESULTS, sample = ASSEMBLIES.keys(), haplotype = ["H1", "H2"]),
+		expand("{results}/evaluation/{region}/all-stats.tsv", results = RESULTS, region = ["all"] + [r for r in REGIONS.keys()]),
+		expand("{results}/evaluation/{region}/plots/{sample}_{haplotype}_{which}.pdf", results = RESULTS, sample = ASSEMBLIES.keys(), haplotype = ["H1", "H2"], which = ["all", "err"], region = ["all"] + [r for r in REGIONS.keys()]),
+		expand("{results}/evaluation/{region}/plots/{sample}_{haplotype}_scores.pdf", results = RESULTS, sample = ASSEMBLIES.keys(), haplotype = ["H1", "H2"], region = ["all"] + [r for r in REGIONS.keys()])

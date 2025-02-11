@@ -1,0 +1,7 @@
+agc: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/experiments/phasing-1kg/results-with-rare/consensus-haplotypes/haplotypes/PanGenie-SHAPEIT/all/PanGenie-SHAPEIT_all_consensus-haplotypes.agc"
+consensus: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/experiments/phasing-1kg/results-with-rare/consensus-haplotypes/haplotypes/PanGenie-SHAPEIT/all/PanGenie-SHAPEIT_all_summary.tsv"
+assemblies: "assemblies.tsv"
+reference: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/reference/chm13v2.0.fa.gz"
+outname: "results-consensus-PG"
+
+use_consensus_as_ref: True

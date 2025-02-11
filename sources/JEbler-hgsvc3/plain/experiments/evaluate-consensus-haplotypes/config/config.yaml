@@ -1,0 +1,7 @@
+agc: "/path/to/consensus.agc"
+consensus: "/path/to/consensus-names.tsv"
+assemblies: "/path/to/assemblies.tsv"
+reference: "/path/to/reference.fa.gz"
+outname: "results"
+
+use_consensus_as_ref: True

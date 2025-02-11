@@ -1,0 +1,51 @@
+
+
+rule all:
+	input:
+		expand("1KGP.CHM13v2.0.chr{chrom}.recalibrated.snp_indel.pass.vcf.gz{ext}", chrom = [str(i) for i in range(1,23)] + ["X", "Y"], ext = ["", ".tbi"]),
+		"trios_only.ped",
+		"unrelated_superpopulations.csv",
+		expand("1KGP.CHM13v2.0.chr{chrom}.recalibrated.snp_indel.pass.filtered.vcf.gz", chrom = [str(i) for i in range(1,23)] + ["X", "Y"])
+
+rule download_vcfs:
+	output:
+		vcf = "1KGP.CHM13v2.0.chr{chrom}.recalibrated.snp_indel.pass.vcf.gz",
+		tbi = "1KGP.CHM13v2.0.chr{chrom}.recalibrated.snp_indel.pass.vcf.gz.tbi"
+	shell:
+		"""
+		wget https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/variants/1000_Genomes_Project/chm13v2.0/all_samples_3202/{output.vcf}
+		wget https://s3-us-west-2.amazonaws.com/human-pangenomics/T2T/CHM13/assemblies/variants/1000_Genomes_Project/chm13v2.0/all_samples_3202/{output.tbi}
+		"""
+
+
+rule download_population_files:
+	output:
+		unrelated = "unrelated_superpopulations.csv",
+		trios = "trios_only.ped"
+	shell:
+		"""
+		wget https://raw.githubusercontent.com/JosephLalli/phasing_T2T/master/sample_subsets/unrelated_superpopulations.csv
+		wget https://raw.githubusercontent.com/JosephLalli/phasing_T2T/master/pedigrees/trios_only.ped
+		"""
+
+rule filtering:
+	input:
+		vcf = "1KGP.CHM13v2.0.chr{chrom}.recalibrated.snp_indel.pass.vcf.gz",
+		unrelated = "unrelated_superpopulations.csv",
+		trios = "trios_only.ped",
+		reference = "chm13v2.0.fa"	
+	output:
+		"1KGP.CHM13v2.0.chr{chrom}.recalibrated.snp_indel.pass.filtered.vcf.gz"
+	threads: 8
+	shell:
+		"""
+		    bcftools norm --threads {threads} -Ou -f {input.reference} -m- {input.vcf} \
+		    | bcftools +mendelian -Ou - --ped {input.trios} -m a -m d \
+		    | bcftools +fill-tags --threads {threads} -Ou - -- -t AN,AC \
+		    | bcftools +fill-tags --threads {threads} -Ou - -- -S {input.unrelated} -t HWE \
+		    | bcftools view \
+			    -e \"ALT=='*' || INFO/NEGATIVE_TRAIN_SITE || INFO/VQSLOD<0 || F_MISSING>0.05 || INFO/MERR>30 || MAC==0 || INFO/HWE_EUR<1e-10 || INFO/HWE_AFR<1e-10 || INFO/HWE_EAS<1e-10 || INFO/HWE_AMR<1e-10 || INFO/HWE_SAS<1e-10 || FILTER!='PASS'\" \
+			    --threads {threads} -Ou - \
+		    | bcftools annotate -Ob -x ^INFO/AC,^INFO/AN,^FORMAT/GT,^FORMAT/PS > {output} && \
+		    bcftools index --threads {threads} -f {output}
+		"""

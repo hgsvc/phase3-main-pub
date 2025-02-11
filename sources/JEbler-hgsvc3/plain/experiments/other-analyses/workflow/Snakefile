@@ -1,0 +1,40 @@
+configfile: "config/config.yaml"
+
+PANEL_MULTI = config["panel_multi"]
+RAW_MC_VCF = config["raw_mc_vcf"]
+PANEL_BI = config["panel_bi"]
+SAMPLES = config["samples"]
+
+# callset comparison
+CALLSETS = config["callset_comparison"]
+LINKS = config["links"]
+ANNOTATIONS = config["annotations"]
+FAI = config["fai"]
+
+# analysis interruptive SVs
+PHASED_VCF = config["phased_vcf"]
+CHAIN = config["chain"]
+FILTERS = config["filters"]
+REGIONS = config["regions"]
+liftover = config["liftover"]
+
+include: "rules/compare-pav.smk"
+include: "rules/analyze-interruptive-svs.smk"
+include: "rules/callset-comparisons.smk"
+include: "rules/analyze-unmatched-svs.smk"
+
+rule all:
+	input:
+		expand("{results}/{combination}/{combination}_unmatched-filtered.vcf.gz", results = config["outname"] + '/pete-callset-comparison', combination = CALLSETS.keys()),
+		expand("{results}/{combination}/{combination}_intersections_pete.pdf", results = config["outname"] + '/pete-callset-comparison', combination = CALLSETS.keys()),
+		expand("{results}/{combination}/{combination}_intersections_jana.pdf", results = config["outname"] + '/jana-callset-comparison', combination = ["all"] + [c for c in CALLSETS.keys()]),
+
+		expand("{results}/{callset}/{callset}_counts_{region}.tsv", results = config["outname"] + '/interruptive-svs', region = REGIONS.keys(), callset=["panel", "phased"]),
+
+		expand("{results}/pete-callset-comparison/{combination}/{combination}_unmatched-graph_hgsvc-called_pete.bed", results = config["outname"], combination = CALLSETS.keys()),
+		expand("{results}/pete-callset-comparison/{combination}/{combination}_unmatched-pav_mc-missed_pete.bed", results = config["outname"], combination = CALLSETS.keys()),
+		expand("{results}/jana-callset-comparison/{combination}/{combination}_unmatched-graph_hgsvc-called_jana.bed", results = config["outname"], combination = [c for c in CALLSETS.keys()]),
+		expand("{results}/jana-callset-comparison/{combination}/{combination}_unmatched-pav_mc-missed_jana.bed", results = config["outname"], combination =  [c for c in CALLSETS.keys()]),
+		expand("{results}/{combination}/{combination}_overlap-gene-interruptive_jana.tsv", results = config["outname"] + '/jana-callset-comparison', combination =  [c for c in CALLSETS.keys()]),
+		expand("{results}/{which}-callset-comparison/{combination}/{combination}_unmatched-pav_mc-missed_telo_{which}.bed", which = ["jana", "pete"], results = config["outname"], combination = CALLSETS.keys()),
+		expand("{results}/{which}-callset-comparison/{combination}/{combination}_unmatched-graph_hgsvc-called_telo_{which}.bed", which = ["jana", "pete"], results = config["outname"], combination = CALLSETS.keys())

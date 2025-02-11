@@ -1,0 +1,108 @@
+import gzip
+configfile: "config/config.yaml"
+
+CALLSETS = config['callsets']
+READS = config['reads']
+PANGENIE = config['pangenie']
+PANGENIE_MODULES = config['pangenie-modules']
+DOWNSAMPLING = config['downsampling']
+POPULATIONS = config['reads']
+
+RESULTS_MC_VCF = config['results'] + '/prepare-vcf-MC'
+RESULTS_BENCH = config['results'] + '/benchmarking-pipeline'
+RESULTS_SV_COUNTS = config['results'] + '/sv-count-comparison'
+
+coverages = ['full'] + config['downsampling']
+#versions_to_run = [v for v in config['pangenie'].keys()] + [v for v in config['pangenie-modules'].keys()]
+
+versions_to_run = {}
+for callset in CALLSETS.keys():
+	versions_to_run[callset] = [v for v in CALLSETS[callset]['pangenie']] + [v for v in CALLSETS[callset]['pangenie-modules']]
+
+print(versions_to_run)
+
+for callset in CALLSETS.keys():
+	CALLSETS[callset]['multi'] = "{results}/vcf/{caller}/{caller}_filtered_ids.vcf.gz".format(results = RESULTS_MC_VCF, caller = callset)
+	CALLSETS[callset]['bi'] = "{results}/vcf/{caller}/{caller}_filtered_ids_biallelic.vcf.gz".format(results = RESULTS_MC_VCF, caller = callset)
+
+
+GENOTYPED_SETS = config['genotyped_sets_external']
+for callset in CALLSETS.keys():
+	assert callset not in GENOTYPED_SETS
+	for version in versions_to_run[callset]:
+		for coverage in coverages:
+			name = callset + '_' + version + '_' + coverage
+			GENOTYPED_SETS[name] = {}
+			GENOTYPED_SETS[name]['vcf'] = "{results}/population-typing/{callset}/{version}/{coverage}/merged-vcfs/filtered/all-samples_bi_all_lenient.vcf.gz".format(results = RESULTS_BENCH, callset = callset, version = version, coverage = coverage)
+			GENOTYPED_SETS[name]['collapse'] = True
+			GENOTYPED_SETS[name]['reference'] = CALLSETS[callset]['reference']
+
+PANEL_SAMPLES = {}
+for callset in CALLSETS.keys():
+        for line in gzip.open(CALLSETS[callset]['vcf'], 'rt'):
+                if line.startswith("#CHROM"):
+                        PANEL_SAMPLES[callset] = [s for s in line.strip().split()[9:] if s not in ['GRCh38', 'CHM13']]
+                        break
+
+
+
+include: 'rules/mc-vcf.smk'
+include: 'rules/leave-one-out.smk'
+include: 'rules/population-typing.smk'
+include: 'rules/population-evaluation.smk'
+include: "rules/compute-sv-counts-collapse.smk"
+
+
+def leave_one_out_plots(wildcards):
+	plots = []
+	for callset in CALLSETS.keys():
+		plots.extend( expand("{results}/leave-one-out/{callset}/plots/comparison-versions/{metric}/{metric}_{coverage}_{regions}.pdf", results=RESULTS_BENCH, callset=callset, metric=['concordance', 'precision-recall-typable', 'untyped', 'concordance-vs-untyped'], coverage=coverages, regions=['biallelic', 'multiallelic'] + [r for r in CALLSETS[callset]["regions"].keys()]))
+		plots.extend( expand("{results}/leave-one-out/{callset}/plots/comparison-regions/{metric}/{metric}_{coverage}_{versions}.pdf", results=RESULTS_BENCH, callset=callset, metric=['concordance', 'precision-recall-typable', 'untyped'], coverage=coverages, versions=versions_to_run[callset]))
+		plots.extend( expand("{results}/leave-one-out/{callset}/plots/comparison-coverages/{metric}/{metric}_{version}_{regions}.pdf", results=RESULTS_BENCH, callset=callset, metric=['concordance', 'precision-recall-typable', 'untyped'], version = versions_to_run[callset], regions = ['biallelic', 'multiallelic'] + [r for r in CALLSETS[callset]["regions"].keys()]))
+	return plots
+
+
+def population_genotypes(wildcards):
+	files = []
+	for callset in CALLSETS.keys():
+		files.extend( expand("{results}/population-typing/{callset}/{version}/{coverage}/merged-vcfs/whole-genome/all-samples_{what}_all.vcf.gz", results = RESULTS_BENCH, callset = callset, what = ['bi'], version = versions_to_run[callset], coverage = coverages)  )
+		files.extend( expand("{results}/population-typing/{callset}/{version}/{coverage}/evaluation/statistics/plot_bi_all_filters.tsv", results = RESULTS_BENCH, callset = callset, version = versions_to_run[callset], coverage = ['full'])  )
+		files.extend( expand("{results}/population-typing/{callset}/{version}/{coverage}/evaluation/statistics/plot_bi_all_plot.log", results = RESULTS_BENCH, callset = callset, version = versions_to_run[callset], coverage = ['full']) )
+		files.extend( expand("{results}/population-typing/{callset}/{version}/{coverage}/merged-vcfs/filtered/all-samples_bi_all_lenient.vcf.gz", results = RESULTS_BENCH, callset = callset, version = versions_to_run[callset], coverage = ['full'])  )
+	return files
+
+rule all:
+	input:
+		expand("{results}/vcf/{caller}/{caller}_filtered_ids.vcf.gz", results = RESULTS_MC_VCF, caller = CALLSETS.keys()),
+		expand("{results}/vcf/{caller}/{caller}_filtered_ids_biallelic.vcf.gz", results = RESULTS_MC_VCF, caller = CALLSETS.keys()),
+		
+		leave_one_out_plots,
+		expand("{results}/leave-one-out/{callset}/plots/resources/resources_{callset}-{coverage}.pdf", results = RESULTS_BENCH, callset = [c for c in CALLSETS.keys()], coverage = coverages),
+		expand("{results}/population-typing/{callset}/sample-index.tsv", results = RESULTS_BENCH, callset = [c for c in CALLSETS.keys()]),
+		population_genotypes,
+
+		expand("{results}/sv-count-comparison_{which}.pdf", results = RESULTS_SV_COUNTS, which = ["het", "all"]),
+		expand("{results}/length-distribution.pdf", results = RESULTS_SV_COUNTS)
+
+
+rule prepare_mc_vcf:
+	input:
+		expand("{results}/vcf/{caller}/{caller}_filtered_ids.vcf.gz", results = RESULTS_MC_VCF, caller = CALLSETS.keys()),
+		expand("{results}/vcf/{caller}/{caller}_filtered_ids_biallelic.vcf.gz", results = RESULTS_MC_VCF, caller = CALLSETS.keys())
+
+
+rule leave_one_out:
+	input:
+		leave_one_out_plots,
+		expand("{results}/leave-one-out/{callset}/plots/resources/resources_{callset}-{coverage}.pdf", results = RESULTS_BENCH, callset = [c for c in CALLSETS.keys()], coverage = coverages),
+
+
+rule population_typing:
+	input:
+		expand("{results}/population-typing/{callset}/sample-index.tsv", results = RESULTS_BENCH, callset = [c for c in CALLSETS.keys()]),
+		population_genotypes
+
+rule sv_count_comparison:
+	input:
+		expand("{results}/sv-count-comparison_{which}.pdf", results = RESULTS_SV_COUNTS, which=["all", "het"]),
+		expand("{results}/length-distribution.pdf", results = RESULTS_SV_COUNTS)

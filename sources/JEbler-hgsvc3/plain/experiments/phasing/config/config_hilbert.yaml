@@ -1,0 +1,178 @@
+
+# multi-sample VCF with genotypes to be phased
+vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/experiments/genotyping-1kg/results/benchmarking-pipeline/population-typing/MC-hgsvc3-hprc-chm13/pangenie-108/full/merged-vcfs/filtered/all-samples_bi_all_lenient.vcf.gz"
+reference: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/reference/chm13v2.0.fa"
+
+# name of the ouput folder
+outname: "results-with-rare"
+
+
+### shapeit phasing inputs ###
+
+# trio information
+fam: 1kg-trios.ped
+sex: 1kg-sex.tsv
+
+# whether or not to set low qual genotypes to missing
+low_qual_to_missing: True
+
+# genetic maps
+maps:
+ chr10: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr10.t2t.gmap.resorted.gmap.gz
+ chr11: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr11.t2t.gmap.resorted.gmap.gz
+ chr12: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr12.t2t.gmap.resorted.gmap.gz
+ chr13: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr13.t2t.gmap.resorted.gmap.gz
+ chr14: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr14.t2t.gmap.resorted.gmap.gz
+ chr15: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr15.t2t.gmap.resorted.gmap.gz
+ chr16: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr16.t2t.gmap.resorted.gmap.gz
+ chr17: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr17.t2t.gmap.resorted.gmap.gz
+ chr18: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr18.t2t.gmap.resorted.gmap.gz
+ chr19: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr19.t2t.gmap.resorted.gmap.gz
+ chr1: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr1.t2t.gmap.resorted.gmap.gz
+ chr20: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr20.t2t.gmap.resorted.gmap.gz
+ chr21: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr21.t2t.gmap.resorted.gmap.gz
+ chr22: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr22.t2t.gmap.resorted.gmap.gz
+ chr2: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr2.t2t.gmap.resorted.gmap.gz
+ chr3: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr3.t2t.gmap.resorted.gmap.gz
+ chr4: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr4.t2t.gmap.resorted.gmap.gz
+ chr5: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr5.t2t.gmap.resorted.gmap.gz
+ chr6: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr6.t2t.gmap.resorted.gmap.gz
+ chr7: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr7.t2t.gmap.resorted.gmap.gz
+ chr8: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr8.t2t.gmap.resorted.gmap.gz
+ chr9: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chr9.t2t.gmap.resorted.gmap.gz
+ chrX: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/genetic-maps/chrX.t2t.gmap.resorted.gmap.gz
+
+
+####### Optional: combine input re-genotyped VCF with rare variants from existing phased VCF #######
+
+
+panel_vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/experiments/genotyping-1kg/results/prepare-vcf-MC/vcf/MC-hgsvc3-hprc-chm13/MC-hgsvc3-hprc-chm13_filtered_ids_biallelic.vcf.gz"
+
+# existing phased VCFs (one for each chromosome)
+rare_variants:
+ chr10: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr10.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr11: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr11.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr12: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr12.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr13: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr13.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr14: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr14.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr15: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr15.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr16: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr16.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr17: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr17.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr18: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr18.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr19: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr19.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr1: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr1.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr20: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr20.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr21: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr21.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr22: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr22.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr2: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr2.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr3: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr3.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr4: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr4.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr5: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr5.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr6: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr6.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr7: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr7.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr8: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr8.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chr9: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chr9.recalibrated.snp_indel.pass.filtered.vcf.gz
+ chrX: /gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-genotypes/1KGP.CHM13v2.0.chrX.recalibrated.snp_indel.pass.filtered.vcf.gz
+
+
+####### Optional: evaluate phasing based on these truthsets  ####### 
+ 
+
+truthsets:
+ MC-hgsvc3-hprc-chm13:
+   vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/experiments/genotyping-1kg/results/prepare-vcf-MC/vcf/MC-hgsvc3-hprc-chm13/MC-hgsvc3-hprc-chm13_filtered_ids_biallelic.vcf.gz"
+   evaluation_samples:
+     - HG00732
+     - HG03009
+     - HG03452
+     - HG01596
+     - HG02282
+     - HG00171
+     - NA19036
+     - NA19347
+     - NA19317
+     - HG00733
+     - HG00514
+     - NA19240
+
+
+ NYGC-CHM13:
+   vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-phasing/phased_T2T_panel/1KGP.CHM13v2.0.whole_genome.recalibrated.snp_indel.pass.phased.native_maps.biallelic.3202.bcf.gz"
+   evaluation_samples:
+     - HG00732
+     - HG03009
+     - HG03452
+     - HG01596
+     - HG02282
+     - HG00171
+     - NA19036
+     - NA19347
+     - NA19317
+     - HG00733
+     - HG00514
+     - NA19240
+     - NA19818
+     - NA19819
+     - HG01256
+     - HG01257
+     - HG00419
+     - NA19828
+     - HG01258
+     - HG00420
+
+
+phasing_regions:
+  CHM13-syntenic: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/bed/chm13-shared-hg38.bed"
+  CHM13-easy: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/bed/CHM13_notinalldifficultregions.bed"
+  CHM13-lowmap-segdup: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/bed/CHM13_alllowmapandsegdupregions.bed"
+  CHM13-tandem-repeat: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/bed/CHM13_AllTandemRepeatsandHomopolymers_slop5.bed"
+
+
+
+### QV value estimation ###
+
+reads: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/experiments/genotyping-1kg/1kg-reads-updated.tsv"
+qv_samples:
+ - HG02321
+ - HG03110
+ - HG02890
+ - HG02496
+ - HG03072
+ - HG01255
+ - NA19783
+ - HG01053
+ - HG01055
+ - HG01463
+ - HG00615
+ - HG00536
+ - HG00452
+ - HG02179
+ - HG02085
+ - NA12813
+ - HG01526
+ - HG02221
+ - NA12802
+ - NA12045
+ - HG03617
+ - HG04157
+ - NA21092
+ - HG03848
+ - HG02700
+ - HG00438
+ - HG01358
+ - HG00096
+ - HG01114
+ - HG01596
+
+assembly_qvs: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/hgsvc3_varcall_qvest.tsv"
+consensus_samples: "consensus-samples.tsv"
+
+external_phasing:
+  NYGC-GRCh38:
+    vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/nygc-phasing/phased_GRCh38_panel/1kGP_high_coverage_Illumina.filtered.SNV_INDEL_SV_phased_panel.vcf.gz"
+    reference: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/reference/hg38.no_alt.fa"
+    qv_regions: {}
+
+qv_regions:
+  CHM13-syntenic: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/bed/chm13-shared-hg38.bed"
+

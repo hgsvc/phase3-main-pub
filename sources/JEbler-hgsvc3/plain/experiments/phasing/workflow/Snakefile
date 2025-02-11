@@ -1,0 +1,125 @@
+configfile: "config/config.yaml"
+
+GENOTYPES = config["vcf"]
+MAPS = config["maps"]
+FAM = config["fam"]
+SEX = config["sex"]
+
+PANEL_VCF = config["panel_vcf"]
+RARE_VARIANTS = config["rare_variants"]
+MERGED_GENOTYPES = {}
+SCAFFOLDS = {}
+TRUTHSETS = config["truthsets"]
+GQ_FILTERING = config["low_qual_to_missing"]
+
+READS = config["reads"]
+ASSEMBLY_QVS = config["assembly_qvs"]
+REFERENCE = config["reference"]
+QV_SAMPLES = config["qv_samples"]
+
+
+CONSENSUS_SAMPLES = [s.strip() for s in open(config['consensus_samples'], 'r')]
+print('Computing consensus haplotypes for ' + str(len(CONSENSUS_SAMPLES)) + ' samples.')
+
+############################### sanity check inputs ###############################
+
+if RARE_VARIANTS and MAPS:
+	# make sure same set of chromosomes is provided
+	if set(RARE_VARIANTS.keys()) != set(MAPS.keys()):
+		raise Exception("Set of chromosomes provided for panel and maps differs.")
+
+
+
+########################## set up evaluation sample sets ##########################
+
+EVAL_SAMPLES = set([])
+for callset in TRUTHSETS:
+	for sample in TRUTHSETS[callset]["evaluation_samples"]:
+		EVAL_SAMPLES.add(sample)
+
+EVAL_SAMPLES = list(EVAL_SAMPLES)
+
+JOINT_EVAL_SAMPLES = None
+for callset in TRUTHSETS:
+	if not JOINT_EVAL_SAMPLES:
+		JOINT_EVAL_SAMPLES = set(TRUTHSETS[callset]["evaluation_samples"])
+	else:
+		JOINT_EVAL_SAMPLES.intersection(set(TRUTHSETS[callset]["evaluation_samples"]))
+
+PHASING_REGIONS = config["phasing_regions"]
+
+###################################################################################
+
+
+prepare_outname = config["outname"] + "/prepare-input-vcf"
+shapeit_outname = config["outname"] + "/shapeit"
+consensus_outname = config["outname"] + "/consensus-haplotypes"
+
+for chrom in RARE_VARIANTS.keys():
+	MERGED_GENOTYPES[chrom] = "{results}/phasing-input_{chrom}.vcf.gz".format(results = prepare_outname, chrom = chrom)
+	SCAFFOLDS[chrom] = "{results}/filtered_phasing_{chrom}.vcf.gz".format(results = prepare_outname, chrom = chrom)
+
+
+
+QV_REGIONS = {}
+QV_REGIONS["PanGenie-SHAPEIT"] = {}
+
+for region in config["qv_regions"]:
+	QV_REGIONS["PanGenie-SHAPEIT"][region] = config["qv_regions"][region]
+
+for callset in config["external_phasing"]:
+	QV_REGIONS[callset] = {}
+	for region in config["external_phasing"][callset]["qv_regions"]:
+		QV_REGIONS[callset][region] = config["external_phasing"][callset]["qv_regions"][region]
+
+
+PHASED_VCFS = config["external_phasing"]
+PHASED_VCFS["PanGenie-SHAPEIT"] = {}
+PHASED_VCFS["PanGenie-SHAPEIT"]["vcf"] = "{results}/{version}/phased_{version}.vcf.gz".format(results = shapeit_outname, version = "shapeit")
+PHASED_VCFS["PanGenie-SHAPEIT"]["reference"] = config["reference"]
+
+
+
+include: "rules/prepare-phasing-vcf.smk"
+include: "rules/shapeit-phasing.smk"
+include: "rules/evaluate-phasing-regions.smk"
+include: "rules/compute-phasing-qvs-merqury-regions.smk"
+include: "rules/compare-genotypes.smk"
+
+
+def evaluation_output(wildcards):
+	outfiles = []
+	for t in TRUTHSETS.keys():
+		for vartype in ["snps", "all"]:
+			outfiles.append("{results}/evaluation/{version}/evaluation_{version}_{truthset}_{vartype}.pdf".format(results=shapeit_outname, truthset=t, version="shapeit", vartype=vartype))
+	if TRUTHSETS:
+		for vartype in ["snps", "all"]:
+			for region in [r for r in PHASING_REGIONS.keys()] + ["all"]:
+				outfiles.append("{results}/evaluation/{version}/evaluation_{version}_{vartype}_{region}_multiway.pdf".format(results=shapeit_outname, version="shapeit", vartype=vartype, region=region))
+	return outfiles
+
+
+rule all:
+	input:
+#		expand("{results}/phasing-input_{chrom}.vcf.gz", results = prepare_outname, chrom = [c for c in RARE_VARIANTS.keys()]),
+#		expand("{results}/{version}/phased_shapeit_{chrom}.bcf", results = shapeit_outname, version="shapeit", chrom = [c for c in MAPS.keys()]),
+#		evaluation_output,
+#		expand("{results}/evaluation/qv-values_merqury.pdf", results = consensus_outname, region = ["all"] + [r for r in QV_REGIONS.keys()]),
+#		expand("{results}/evaluation/completeness_merqury.pdf", results = consensus_outname, region = ["all"] + [r for r in QV_REGIONS.keys()]),
+#		expand("{results}/concordance/{truthset}_{version}.pdf", results = shapeit_outname, truthset = TRUTHSETS.keys(), version = "shapeit"),
+#		expand("{results}/haplotypes/{callset}/all/{callset}_all_{sample}_hap{haplotype}_consensus.fasta.gz", results = consensus_outname, callset = "PanGenie-SHAPEIT" , sample = CONSENSUS_SAMPLES, haplotype = ["1", "2"]),
+#		expand("{results}/haplotypes/{callset}/all/{callset}_all_consensus-haplotypes.agc", results = consensus_outname, callset = "PanGenie-SHAPEIT"),
+		expand("{results}/haplotypes/{callset}/all/{callset}_qv_consensus-haplotypes.agc", results = consensus_outname, callset = [c for c in PHASED_VCFS.keys() if c != "PanGenie-SHAPEIT"]),
+		expand("{results}/haplotypes/{callset}/all/{callset}_all_summary.tsv", results = consensus_outname, callset = PHASED_VCFS.keys())
+
+rule prepare_phasing:
+	input:
+		expand("{results}/phasing-input_{chrom}.vcf.gz", results = prepare_outname, chrom = [c for c in RARE_VARIANTS.keys()])
+
+
+rule run_phasing:
+	input:
+		expand("{results}/phasing-input_{chrom}.vcf.gz", results = prepare_outname, chrom = [c for c in RARE_VARIANTS.keys()]),
+		expand("{results}/{version}/phased_shapeit_{chrom}.bcf", results = shapeit_outname, version="shapeit", chrom = [c for c in MAPS.keys()]),
+		evaluation_output
+

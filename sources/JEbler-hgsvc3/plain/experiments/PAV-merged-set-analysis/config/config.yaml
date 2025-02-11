@@ -1,0 +1,31 @@
+# path to merged, multi-sample VCF
+merged_set: "path/to/merged.vcf.gz"
+
+# TSV file specifying paths to single-sample VCFs
+# format:   <sample>   </path/to/calls.vcf.gz>  </path/to/callable-regions.bed> 
+single_vcfs: "/path/to/single-sample-files.tsv"
+
+# TSV file specifying paths to FASTA/Q reads
+# format: <sample>   </path/to/reads.fa>
+reads: "/path/to/reads.tsv"
+
+# reference genome underlying calls
+reference: "/path/to/reference.fa"
+
+# path to yak executable
+yak: "./yak/yak"
+
+
+############################################
+#  Optional arguments
+############################################
+
+# OPTIONAL: precomputed QVs for assemblies
+# format: <H1|H2> <sample-name> <QV value>.
+# If not available, set to: ""
+assembly_qvs: "/path/to/precomputed-qvs.tsv"
+
+# OPTIONAL: regions to be considered.
+# If not available, set to: {}
+bed:
+ regionname: "/path/to/region.bed"

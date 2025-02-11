@@ -1,0 +1,54 @@
+
+
+# comparison to PAV
+callset_comparison:
+ MC_freeze2pre:
+  pav_del: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/pav_intersection_tables/20240718_PGFreeze4_Intersect/graph/hprc/intersect/freeze2pre/del.tsv.gz"
+  pav_ins: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/pav_intersection_tables/20240718_PGFreeze4_Intersect/graph/hprc/intersect/freeze2pre/ins.tsv.gz"
+  pav_vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/pav_intersection_tables/20240718_PGFreeze4_Intersect/dtab/hs1/freeze2pre/table/variants_freeze2pre_sv_insdel.tsv.gz"
+  graph_vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/experiments/genotyping-1kg/results/prepare-vcf-MC/vcf/MC-hgsvc3-hprc-chm13/MC-hgsvc3-hprc-chm13_filtered_ids_biallelic.vcf.gz"
+  pav_name: "PAV-freeze2"
+  graph_name: "MC-panel"
+
+ MC_freeze4:
+  pav_del: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/pav_intersection_tables/20240718_PGFreeze4_Intersect/graph/hprc/intersect/freeze4/del.tsv.gz"
+  pav_ins: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/pav_intersection_tables/20240718_PGFreeze4_Intersect/graph/hprc/intersect/freeze4/ins.tsv.gz"
+  pav_vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/pav_intersection_tables/20240718_PGFreeze4_Intersect/dtab/hs1/freeze4/table/variants_freeze4_sv_insdel.tsv.gz"
+  graph_vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/experiments/genotyping-1kg/results/prepare-vcf-MC/vcf/MC-hgsvc3-hprc-chm13/MC-hgsvc3-hprc-chm13_filtered_ids_biallelic.vcf.gz"
+  pav_name: "PAV-freeze4"
+  graph_name: "MC-panel"
+
+ PG_freeze2pre:
+  pav_del: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/pav_intersection_tables/20240718_PGFreeze4_Intersect/graph/pangenie/intersect/freeze2pre/del.tsv.gz"
+  pav_ins: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/pav_intersection_tables/20240718_PGFreeze4_Intersect/graph/pangenie/intersect/freeze2pre/ins.tsv.gz"
+  pav_vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/pav_intersection_tables/20240718_PGFreeze4_Intersect/dtab/hs1/freeze2pre/table/variants_freeze2pre_sv_insdel.tsv.gz"
+  graph_vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/experiments/genotyping-1kg/results/benchmarking-pipeline/population-typing/MC-hgsvc3-hprc-chm13/pangenie-108/full/merged-vcfs/filtered/all-samples_bi_all_lenient.vcf.gz"
+  pav_name: "PAV-freeze2"
+  graph_name: "PanGenie-genotypes"
+
+ PG_freeze4:
+  pav_del: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/pav_intersection_tables/20240718_PGFreeze4_Intersect/graph/pangenie/intersect/freeze4/del.tsv.gz"
+  pav_ins: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/pav_intersection_tables/20240718_PGFreeze4_Intersect/graph/pangenie/intersect/freeze4/ins.tsv.gz"
+  pav_vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/pav_intersection_tables/20240718_PGFreeze4_Intersect/dtab/hs1/freeze4/table/variants_freeze4_sv_insdel.tsv.gz"
+  graph_vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/experiments/genotyping-1kg/results/benchmarking-pipeline/population-typing/MC-hgsvc3-hprc-chm13/pangenie-108/full/merged-vcfs/filtered/all-samples_bi_all_lenient.vcf.gz" 
+  pav_name: "PAV-freeze4"
+  graph_name: "PanGenie-genotypes"
+
+annotations: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/bed/variants_freeze4_sv.anno"
+links: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/pav-calls/link_sv_insdel.tsv"
+
+raw_mc_vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/MC-calls/hgsvc3-hprc-2024-02-23-mc-chm13.vcf.gz"
+panel_multi: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/experiments/genotyping-1kg/results/prepare-vcf-MC/vcf/MC-hgsvc3-hprc-chm13/MC-hgsvc3-hprc-chm13_filtered_ids.vcf.gz"
+
+# analyze interruptive SVs
+panel_bi: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/experiments/genotyping-1kg/results/prepare-vcf-MC/vcf/MC-hgsvc3-hprc-chm13/MC-hgsvc3-hprc-chm13_filtered_ids_biallelic.vcf.gz"
+samples: "hgsvc3-samples.tsv"
+phased_vcf: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/experiments/phasing-1kg/results-with-rare/shapeit/shapeit/phased_shapeit.vcf.gz"
+chain: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/chain-files/grch38-chm13v2.chain" 
+filters: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/experiments/genotyping-1kg/results/benchmarking-pipeline/population-typing/MC-hgsvc3-hprc-chm13/pangenie-108/full/evaluation/statistics/plot_bi_all_filters.tsv"
+regions:
+  interruptive-sv: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/bed/ill_specific_CNVs.anno.bed.gz"
+liftover: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/chain-files/liftOver" 
+fai: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/reference/chm13v2.0.fa.fai"
+
+outname: "results"

@@ -1,0 +1,6 @@
+#sample	assemb_H1	assemb_H2
+HG00096	inputs/HG00096.vrk-ps-sseq.asm-hap1.fasta.gz	inputs/HG00096.vrk-ps-sseq.asm-hap2.fasta.gz
+HG01114	inputs/HG01114.vrk-ps-sseq.asm-hap1.fasta.gz	inputs/HG01114.vrk-ps-sseq.asm-hap2.fasta.gz
+HG01596	inputs/HG01596.vrk-ps-sseq.asm-hap1.fasta.gz	inputs/HG01596.vrk-ps-sseq.asm-hap2.fasta.gz
+HG01255	inputs/HG01255.assembly.haplotype1.fasta.gz	inputs/HG01255.assembly.haplotype2.fasta.gz
+HG04157	inputs/HG04157.assembly.haplotype1.fasta.gz	inputs/HG04157.assembly.haplotype2.fasta.gz

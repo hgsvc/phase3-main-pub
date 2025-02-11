@@ -1,0 +1,7 @@
+agc: "data/NYGC-GRCh38_qv_consensus-haplotypes_chm13_HG002.agc"
+consensus: "data/NYGC-GRCh38_all_summary.tsv"
+assemblies: "assemblies-nygc.tsv"
+reference: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/reference/chm13v2.0.fa.gz"
+outname: "results-consensus-NYGC"
+
+use_consensus_as_ref: True

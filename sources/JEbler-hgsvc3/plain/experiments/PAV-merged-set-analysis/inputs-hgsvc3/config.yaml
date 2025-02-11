@@ -1,0 +1,34 @@
+# path to merged, multi-sample VCF
+merged_set: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/pav-calls/pav_variants_batch1_alt.vcf.gz"
+
+# TSV file specifying paths to single-sample VCFs
+# format:   <sample>   </path/to/calls.vcf.gz>  </path/to/callable-regions.bed> 
+single_vcfs: "batch1_single-sample-files.txt"
+
+# TSV file specifying paths to FASTA/Q reads
+# format: <sample>   </path/to/reads.fa>
+reads: "reads.tsv"
+
+# reference genome underlying calls
+reference: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/reference/hg38.no_alt.fa"
+
+# path to yak executable
+yak: "./yak/yak"
+
+
+
+############################################
+#  Optional arguments
+############################################
+
+# OPTIONAL: precomputed QVs for assemblies
+# format: <H1|H2> <sample-name> <QV value>.
+# If not available, set to: ""
+assembly_qvs: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/hgsvc3_varcall_qvest.tsv"
+
+# OPTIONAL: regions to be considered.
+# If not available, set to: {}
+bed:
+ segdups: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/bed/ucsc-segdups-hg38-merged.bed"
+
+#giab_easy_regions: "/gpfs/project/projects/medbioinf/users/ebler/hgsvc3/data/bed/GRCh38_notinalldifficultregions.bed"
