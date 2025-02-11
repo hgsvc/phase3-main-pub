@@ -1,0 +1,8 @@
+latency-wait: 60
+keep-going: True
+printshellcmds: True
+restart-times: 3
+
+# Cluster submission
+jobname: "{rulename}.{jobid}"
+drmaa: " -l centos=7 -V -cwd -j y -o ./log -e ./log -l h_rt={resources.hrs}:00:00 -l mfree={resources.mem}G -pe serial {threads} -w n -S /bin/bash"

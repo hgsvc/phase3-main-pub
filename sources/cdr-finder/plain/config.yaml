@@ -1,0 +1,14 @@
+manifest: manifest.tab
+# Size of the methylation windows to average over
+window_size: 5000
+# Slide size of the methylation windows of the target region
+slide: 5000
+# Minimum size of CDR to report
+report_threshold: 25000
+# Size of ALR repeat stretches to include in search of CDR
+alr_threshold: 100000
+# Distance to search on the edge of CDRs to ensure that methylation reaches max around
+edge_search: 50000
+# Threshold for mean percent methylation to clear in order for standard calling, 
+## if below, it is assumed that this is the low end of the distribution and the windows will be taken based on what is 1/2 a standard deviation above the mean 
+low_threshold: 39

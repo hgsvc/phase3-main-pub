@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Get directory where the script is located
+SOURCE="${BASH_SOURCE[0]}"
+
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+
+SOURCE_DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+
+# Load miniconda
+module load miniconda/23.5.2
+
+
+# Init
+mkdir -p log
+
+# Get jobs
+JOB_COUNT=$1
+
+shift
+
+# Run
+snakemake -s ${SOURCE_DIR}/Snakefile --ri -p --use-singularity --singularity-args "--bind /net/:/net/" -k -j ${JOB_COUNT} "$@"

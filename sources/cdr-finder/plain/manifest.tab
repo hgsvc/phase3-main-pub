@@ -1,0 +1,3 @@
+SAMPLE	FASTA	TARGET_BED	METH_TSV
+CHM13_centromere_8	/path/to/T2T-CHM13v2.fasta	/path/to/target_region.bed	/path/to/CHM13_methylation_data.bed
+CHM13_centromere_21	/path/to/T2T-CHM13v2.fasta	/path/to/target_region.bed	/path/to/CHM13_methylation_data.bed
