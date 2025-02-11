@@ -1,0 +1,12 @@
+HG00733-verkko:
+  asm_h1: /net/eichler/vol27/projects/hgsvc/nobackups/sharing/incoming/20230713_verkko_phased-HHU/HG00733/sequences/HG00733.ps-sseq.verkko.hap1.fasta
+  asm_h2: /net/eichler/vol27/projects/hgsvc/nobackups/sharing/incoming/20230713_verkko_phased-HHU/HG00733/sequences/HG00733.ps-sseq.verkko.hap2.fasta
+  fofns:
+    HiFi: /net/eichler/vol27/projects/hgsvc/nobackups/assemblies/verkko/v1.4-hgsvc/HG00733/HG00733_PB.fofn
+  genBed: false
+  nuc_opts: -y 100
+  regions: {}
+  repeat_mask: false
+  species: human
+  type_map:
+    HiFi: winnowmap
