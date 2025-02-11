@@ -1,0 +1,6 @@
+# if input files are read from FOFN
+# files with relative paths, specify
+# the data root (= path prefix) here
+data_root: /gpfs/project/projects/medbioinf/data/00_RESTRUCTURE
+
+container_store: /gpfs/project/projects/medbioinf/container

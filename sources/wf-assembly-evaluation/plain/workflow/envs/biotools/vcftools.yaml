@@ -1,0 +1,6 @@
+name: vcftools
+dependencies:
+  - python=3.10.*
+  - htslib=1.17
+  - bcftools=1.17
+  - pigz=2.8

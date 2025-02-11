@@ -1,0 +1,7 @@
+
+deepvariant: deepvariant_1.6.0.sif
+# NB: only DeepVariant >=1.5.0 supports
+# ONT R10 reads
+deepvariant_models:
+  hifi: PACBIO
+  ont: ONT_R104

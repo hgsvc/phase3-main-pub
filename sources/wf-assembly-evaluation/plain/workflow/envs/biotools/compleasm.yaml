@@ -1,0 +1,3 @@
+name: compleasm
+dependencies:
+  - compleasm=0.2.5

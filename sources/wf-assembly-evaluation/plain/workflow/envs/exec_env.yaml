@@ -1,0 +1,16 @@
+name: smk_exec_env
+dependencies:
+  - Python=3.9.*
+  - pip
+  - mamba=1.1.0
+  - snakemake=7.19.1
+  - portalocker=2.5.1
+  - pandas=1.4.3
+  - pytables=3.7.0
+  - hdf5=1.12.1
+  - pyarrow=8.0.1
+  - numpy=1.23.1
+  - pyyaml=6.0
+  - toml=0.10.2
+  - semver=2.13.0
+  - coincbc=2.10.8

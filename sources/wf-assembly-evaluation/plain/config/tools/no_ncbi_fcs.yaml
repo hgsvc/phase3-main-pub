@@ -1,0 +1,27 @@
+
+# source / docs: https://github.com/ncbi/fcs
+
+# from the docs:
+# "FCS-adaptor detects adaptor and vector contamination in
+# genome sequences. FCS-adaptor is a
+# high-throughput implementation of NCBI VecScreen."
+run_ncbi_fcs_adaptor: False
+
+# from the docs:
+# "FCS-GX detects contamination from foreign organisms in
+# genome sequences using the genome cross-species aligner (GX)."
+run_ncbi_fcs_gx: False
+
+ncbi_fcs:
+  root_path: /gpfs/project/projects/medbioinf/data/00_RESTRUCTURE/db_dumps/ncbi_fcs
+  # NB: "all" is the prefix for the database files
+  # located in that directory, it is not a directory name
+  gx_db_path: r2023-01-24
+  gx_db_name: all
+  gx_sif: releases/v0.4.0/fcs-gx.0.4.0.sif
+  gx_script: releases/v0.4.0/fcs-main/dist/fcs.py
+  gx_tax_id: 9606
+  adaptor_sif: releases/v0.4.0/fcs-adaptor.sif
+  adaptor_script: releases/v0.4.0/fcs-main/dist/run_fcsadaptor.sh
+  adaptor_taxonomy: euk  # prok OR euk
+

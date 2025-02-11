@@ -1,0 +1,12 @@
+name: repmask
+dependencies:
+  - repeatmasker=4.1.5
+  - trf=4.09.1
+  - rmblast=2.14.0
+  - pigz=2.6
+
+# RepeatMasker default database:
+#  Title    : Dfam
+#  Version  : 3.7
+#  Date     : 2023-01-11
+#  Families : 19,768

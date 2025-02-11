@@ -1,0 +1,8 @@
+name: hmmer
+dependencies:
+  - hmmer=3.4
+
+# DO NOT DOWNGRADE
+# any version below 3.4 includes an annoying
+# bug related to the auto-detection of the
+# alphabet

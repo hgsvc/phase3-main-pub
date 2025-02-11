@@ -1,0 +1,7 @@
+name: seqtk
+dependencies:
+  - seqtk=1.4
+  - pigz=2.6
+
+# DO NOT DOWNGRADE
+# any version below 1.4 does not include the 'telo' command

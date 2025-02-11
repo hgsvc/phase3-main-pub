@@ -1,0 +1,19 @@
+
+# controls behavior for gene completeness
+select_only_main_chromosomes: True
+
+
+# Config options to use reference container
+# as part of the pipeline
+use_reference_container: false
+# If use_reference_container is set to true, the following
+# two options must be specified as well in the config
+
+# Existing path to directory with reference container (*.sif) files.
+# This option is specific to the execution infrastructure.
+# reference_container_store: <PATH>
+
+# List of container names to be used in the pipeline
+# reference_container_names:
+#   - name1
+#   - name2

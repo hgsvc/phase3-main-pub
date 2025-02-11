@@ -1,0 +1,5 @@
+name: bedtools
+dependencies:
+  - python=3.10.*
+  - bedtools=2.30.*
+  - tabix=1.11

@@ -1,0 +1,94 @@
+# TODO
+# this is project-specific
+
+refgenomes:
+  hg38:
+    any: GRCh38_HGSVC2_noalt.fasta
+  t2tv2:
+    male: chm13v2.0.fasta
+    male-hap: chm13v2.0.male-hap.fasta
+    female: chm13v2.0_maskedY.fasta
+    female-hap: chm13v2.0.female-hap.fasta
+    any: chm13v2.0.fasta
+    censat: t2tv2_censat-v21_par_exclude.bed
+
+complete_reference: t2tv2
+
+sex_chromosomes:
+  male:
+    - chrY
+  female:
+    - chrX
+
+# If set to True, enforce to use
+# the annotated sample sex for all
+# sex-specific assembly units.
+# If set to False, infer on the basis
+# of the contig-to-reference alignments
+force_annotated_sample_sex: False
+
+gene_models:
+  gencodeV44:
+    male: gencode.v44.pc_transcripts.122Y.fa.gz
+    female: gencode.v44.pc_transcripts.122X.fa.gz
+    any: gencode.v44.pc_transcripts.122XY.fa.gz
+
+run_repeatmasker: False
+repeatmasker_species: human
+repeatmasker_offline_setup: True
+
+run_hmmer: True
+# === HMMER reporting thresholds ===
+#  -E <x> : report sequences <= this E-value threshold in output  [10.0]  (x>0)
+### >>> the evalue_t threshold will be used to limit the output of HMMER
+#  -T <x> : report sequences >= this score threshold in output
+### >>> the score_t threshold will be used to label hits above this threshold as high-quality
+### >>> in a postprocessing step, i.e. the score threshold is not used in the call to HMMER
+# === HMMER scaling factors ===
+#  scale_time: factor is multiplied by 'attempt' variable,
+# i.e. attempt(1)*factor -> attempt(2)*factor -> attempt(3)*factor etc.
+#  scale_cpu: factor is multiplied by value of CPU_LOW (default: 2), i.e. 2*factor
+#  scale_mem: factor is multiplied by memory per thread (3072 MB) and then increased by attempt,
+# i.e. factor*3072*attempt(1) -> factor*3072*attempt(2) -> attempt(3)*factor etc.
+hmmer_motif_search:
+  DYZ18_Yq:
+    score_t: 2100
+    evalue_t: '1.60E-150'
+  DYZ1_Yq:
+    score_t: 2500
+    evalue_t: '1.60E-150'
+  DYZ2_Yq:
+    score_t: 1700
+    evalue_t: '1.60E-150'
+    scale_cpu: 2
+    scale_time: 4
+    scale_mem: 2
+  DYZ3-sec_Ycentro:
+    score_t: 1700
+    evalue_t: '1.60E-150'
+    scale_time: 4
+    scale_mem: 2
+    scale_cpu: 2
+
+# TODO - move into project-specific config
+# the TSPY motif is too large to scan entire genomes;
+# this has to be done in a subsequent step on individual
+# contigs/scaffolds/chromosomes
+  # TSPY:
+  #   score_t: 1000
+  #   evalue_t: '1.60E-200'
+  #   scale_cpu: 4
+  #   scale_time: 71
+  #   scale_mem: 5
+  # DYZ19_Yq:
+  #   evalue_t: '1.60E-15'
+  # DYZ3-prim_Ycentro:
+  #   score_t: 90
+  #   evalue_t: '1.60E-15'
+  # Yqhet_2k7bp:
+  #   score_t: 1500
+  #   evalue_t: '1.60E-200'
+  # Yqhet_3k1bp:
+  #   score_t: 1500
+  #   evalue_t: '1.60E-200'
+

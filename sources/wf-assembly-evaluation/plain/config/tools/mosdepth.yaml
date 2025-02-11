@@ -1,0 +1,16 @@
+
+run_mosdepth: True
+
+run_mosdepth_assm_ref_cov: True
+run_mosdepth_assm_read_cov: True
+
+mosdepth:
+  assm_ref_cov_window_size: 10000
+  assm_ref_cov_mapq_threshold:
+    - 0
+    - 60
+  assm_read_cov_window_size: 1000
+  assm_read_cov_mapq_threshold:
+    - 0
+    - 60
+

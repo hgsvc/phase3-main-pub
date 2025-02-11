@@ -1,0 +1,4 @@
+name: ncbi_fcs
+dependencies:
+  - python=3.8.*
+  - pip

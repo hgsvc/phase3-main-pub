@@ -1,0 +1,39 @@
+
+sequence_length_thresholds_assembly:
+  setting1: &setting1
+    - 100000
+    - 500000
+    - 1000000
+    - 10000000
+    - 50000000
+    - 100000000
+  setting2: &setting2
+    - 10000
+    - 20000
+    - 50000
+    - 100000
+    - 1000000
+    - 10000000
+  hap1: *setting1
+  hap2: *setting1
+  unassigned: *setting2
+  contaminants: *setting2
+
+sex_specific_assembly_units:
+  - hap1
+  - hap2
+
+main_assembly_units:
+  - hap1
+  - hap2
+  - unassigned
+
+# controls rules in
+# 50-postprocess::asm_ctg_readcov.smk
+# 60-flagging::readcov.smk
+use_read_types_window_coverage:
+  - hifi
+  - ont
+groups_window_read_coverage:
+  - hap
+  - unassigned
