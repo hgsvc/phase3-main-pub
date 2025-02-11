@@ -1,0 +1,27 @@
+FIELD	TYPE	NAME	DESC	LONG_DESC
+#CHROM	string	chrom	Reference chromosome	Reference chromosome
+POS	uint	chromStart	Start position	Start position
+END	uint	chromEnd	End position	End position
+ID	string	name	Variant ID	Variant ID
+SCORE	uint	score	Score	Score
+STRAND	char[1]	strand	Strand	Strand
+POS_THICK	uint	thickStart	Coding region start	Coding region start
+END_THICK	uint	thickEnd	Coding region end	Coding region end
+COL	uint	reserved	Hap Color	Color by haplotype
+INDEX	uint	recordIndex	Record index	Unique index (per haplotype) for each alignment record
+QRY_ID	lstring	qryId	Query ID	Query (contig) ID
+QRY_POS	uint	qryPos	Query POS	Query start position in original contig (not reverse complemented if alignment was)
+QRY_END	uint	qryEnd	Query END	Query end position in original contig (not reverse complemented if alignment was)
+QRY_ORDER	uint	qryOrd	Query order	Order of the aligned query segment from the start of the query sequence to the end
+AO	string	chainOrder	Global chain order	Global chain order (LRA alignments)
+RG	string	readGroup	Read group	Read group
+MAPQ	lstring	mapQual	MAPQ	Maping quality. May be a list of alignment was aggregated.
+REV	string	isRev	Rev	Alignment was reversed if True
+FLAGS	lstring	alignFlags	Flags	Alignment flags. May be a list if alignment was aggregated.
+HAP	string	haplotype	Haplotype	Haplotype
+PAV_SCORE	float	pavScore	Score	Alignment score using PAVs scoring system.
+TRIM_REF_L	uint	trimRefL	Align trim (ref L)	Number of reference bases trimmed from the left side
+TRIM_REF_R	uint	trimRefR	Align trim (ref R)	Number of reference bases trimmed from the right side
+TRIM_QRY_L	uint	trimTigL	Align trim (tig L)	Number of contig (query) bases trimmed from the left side
+TRIM_QRY_R	uint	trimTigR	Align trim (tig R)	Number of contig (query) bases trimmed from the right side
+INDEX_PREAGG	lstring	recordindexPreagg	Index (pre-agg.)	Alignment record indexes pre-aggregation.
