@@ -1,0 +1,14 @@
+name: verkko
+dependencies:
+  - Python=3.9.*
+  - pip
+  - mbg=1.0.16
+  - graphaligner=1.0.18
+  - mashmap=3.0.6
+  - snakemake=7.18.1
+  - mamba=1.3.1
+  - pyyaml=6.0
+  - pulp=2.7.0
+  - coincbc=2.10.10
+  - verkko=1.4.1
+  - pkg-config=0.29.2

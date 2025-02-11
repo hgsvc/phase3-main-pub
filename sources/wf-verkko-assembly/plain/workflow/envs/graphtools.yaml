@@ -1,0 +1,5 @@
+name: graphtools
+dependencies:
+  - gfatools=0.5
+  - pigz=2.6
+  - samtools=1.17

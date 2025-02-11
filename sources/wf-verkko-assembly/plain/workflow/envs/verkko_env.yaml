@@ -1,0 +1,20 @@
+name: verkko_env
+dependencies:
+  - Python=3.9.*
+  - pip
+  - mbg=1.0.12
+  - graphaligner=1.0.16
+  - snakemake=7.18.1
+  - mamba=0.27.0
+  - pyyaml=6.0
+  - pulp=2.6.0
+  - coincbc=2.10.5
+  - libblas=3.9.0
+  - libcblas=3.9.0
+  - libgcc-ng=12.2.0
+  - libgfortran-ng=12.2.0
+  - liblapack=3.9.0
+  - libopenblas=0.3.*
+  - libstdcxx-ng=12.2.0
+  - libzlib=1.2.13
+  - pkgutil-resolve-name=1.3.10

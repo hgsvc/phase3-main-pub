@@ -1,0 +1,54 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+# adapt these paths to the local environment or
+# download test data files when container builds
+# (see comment below)
+%files
+cp /home/ebertp/work/data/verkko_testdata/hifi.fastq.gz /testdata/hifi.fastq.gz
+cp /home/ebertp/work/data/verkko_testdata/ont.fastq.gz /testdata/ont.fastq.gz
+
+%post
+    apt-get update
+    apt-get install --assume-yes software-properties-common
+    add-apt-repository universe
+    apt-get update
+    apt-get install --assume-yes \
+        wget git build-essential \
+        python3 python3-pip \
+        pkg-config zlib1g-dev \
+        rust-all gcc-11 make
+    # some Verkko scripts search for "python"
+    ln -s /bin/python3 /bin/python
+    # add Verkko test data to the container
+    mkdir /testdata
+    # ============================================
+    # uncomment the following lines to download
+    # Verkko test data at container build time
+    # cd /testdata
+    # wget --quiet -O hifi.fastq.gz https://obj.umiacs.umd.edu/sergek/shared/ecoli_hifi_subset24x.fastq.gz
+    # wget --quiet -O ont.fastq.gz https://obj.umiacs.umd.edu/sergek/shared/ecoli_ont_subset50x.fastq.gz
+    # ============================================
+
+    # clone Verkko repo and build from source
+    mkdir /repo
+    cd /repo
+    git clone https://github.com/marbl/verkko.git
+    cd verkko
+    git checkout b34fd09
+    cd src
+    git submodule init && git submodule update
+    make -j 8
+    apt-get remove --assume-yes --purge git wget
+    apt-get autoremove --assume-yes
+    apt-get clean --assume-yes
+
+
+
+%environment
+    export LC_ALL=C
+
+%labels
+    AUTHOR Peter Ebert
+    VERKKO_SHA b34fd09
+    VERKKO_RELEASE v1.1

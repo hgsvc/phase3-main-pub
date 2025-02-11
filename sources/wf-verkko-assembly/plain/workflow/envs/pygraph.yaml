@@ -1,0 +1,12 @@
+name: pygraph
+dependencies:
+  - Python=3.9.*
+  - pip
+  - pandas=1.5.3
+  - numpy=1.24.2
+  - networkx=2.8.8
+  - dnaio=0.10.0
+  - xopen=1.7.0
+  - pigz=2.6
+  - python-isal=1.1.0
+  - pytables=3.7.0

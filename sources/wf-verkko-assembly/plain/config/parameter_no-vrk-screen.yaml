@@ -1,0 +1,13 @@
+
+run_verkko_test_local: false
+run_verkko_test_cluster: false
+verkko_dry_run: false
+verkko_smk_profile: prf_RFDGA_verkko_noBonus
+# prf_RFDGA_verkko_woBonus/
+
+input_file_ext:
+  - fastq.gz
+  - fasta.gz
+  - fq.gz
+  - fa.gz
+  - fna.gz

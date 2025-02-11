@@ -1,0 +1,5 @@
+name: minimap2
+dependencies:
+  - minimap2=2.26
+  - samtools=1.17
+  - pigz=2.6

@@ -1,0 +1,15 @@
+
+run_verkko_test_local: false
+run_verkko_test_cluster: false
+verkko_dry_run: false
+verkko_smk_profile: prf_RFDGA_verkko_noBonus
+# prf_RFDGA_verkko_woBonus/
+verkko_screen: human
+verkko_screen_files_exist: True
+
+input_file_ext:
+  - fastq.gz
+  - fasta.gz
+  - fq.gz
+  - fa.gz
+  - fna.gz

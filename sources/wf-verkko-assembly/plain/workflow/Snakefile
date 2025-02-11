@@ -1,0 +1,45 @@
+include: "rules/commons/00_commons.smk"
+include: "rules/00_modules.smk"
+include: "rules/99_aggregate.smk"
+
+
+rule run_all:
+    """ The WORKFLOW_OUTPUT
+    target is updated in the
+    99_aggregate.smk module.
+    """
+    input:
+        RUN_CONFIG_RELPATH,
+        COPY_SAMPLE_SHEET_RELPATH,
+        MANIFEST_RELPATH,
+        WORKFLOW_OUTPUT,
+
+
+rule run_all_no_manifest:
+    """ Rule added for the
+    unexpected case that no
+    manifest file shall be
+    created (e.g., testing)
+    Part of gh#15 fix.
+    """
+    input:
+        RUN_CONFIG_RELPATH,
+        COPY_SAMPLE_SHEET_RELPATH,
+        WORKFLOW_OUTPUT,
+
+
+onsuccess:
+    if any([DIR_CLUSTERLOG_OUT.is_dir(), DIR_CLUSTERLOG_ERR.is_dir()]):
+        shell(f"rm -rf {DIR_CLUSTERLOG_OUT} && mkdir -p {DIR_CLUSTERLOG_OUT}")
+        shell(f"rm -rf {DIR_CLUSTERLOG_ERR} && mkdir -p {DIR_CLUSTERLOG_ERR}")
+    shell(f"rm -f {RUN_CONFIG_RELPATH.with_suffix('.bak.yaml')}")
+
+
+onerror:
+    try:
+        rsync_f2f(RUN_CONFIG_RELPATH, RUN_CONFIG_RELPATH.with_suffix(".bak.yaml"))
+    except FileNotFoundError:
+        # can happen when creation of a single file is requested
+        # during development
+        pass
+    shell(f"rm -f {RUN_CONFIG_RELPATH}")

@@ -1,0 +1,25 @@
+[cubi.workflow]
+pid = "github.com/core-unit-bioinformatics/workflow-smk-genome-hybrid-assembly"
+name = "genome-hybrid-assembly"
+version = "1.4.1-ptyp"
+
+[cubi.metadata]
+pid = "undefined"
+version = "1.5.0"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[cubi.workflow.template]
+pid = "undefined"
+system = "smk"
+version = "1.2.0"
+
+[tool.pylint.format]
+max-line-length = "88"
+
+[tool.pylint.messages_control]
+disable = [ "logging-fstring-interpolation", "useless-return", "missing-module-docstring",]
