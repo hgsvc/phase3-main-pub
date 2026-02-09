@@ -89,7 +89,15 @@ to the main README of the external repositories ([tabular summary](software.tsv)
 
 ### Published article
 
-*(under revision)*
+```
+
+Logsdon* GA, Ebert* P, Audano* PA, Loftus* M, [...] Konkel MK, Korbel JO, Lee C, Beck CR, Eichler EE, Marschall T.
+Complex genetic variation in nearly complete human genomes.
+Nature 2025;1–12.
+http://dx.doi.org/10.1038/s41586-025-09140-6
+```
+
+[Link: Nature 2025](https://doi.org/10.1038/s41586-025-09140-6)
 
 ### Preprint
 
